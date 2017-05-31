@@ -1,6 +1,6 @@
-======================
-Cookiecutter PyPackage
-======================
+===============
+cookiecutter QA
+===============
 
 .. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/shield.svg
      :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
