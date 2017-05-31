@@ -32,7 +32,7 @@ def response():
     See more at: http://doc.pytest.org/en/latest/fixture.html
     """
     # import requests
-    # return requests.get('https://github.com/tierratelematics/cookiecutter-pypackage')
+    # return requests.get('https://github.com/tierratelematics/cookiecutter-qa')
 
 
 def test_content(response):
