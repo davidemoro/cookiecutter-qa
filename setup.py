@@ -5,10 +5,10 @@ setup(
     name='cookiecutter-qa',
     packages=[],
     version='0.1.0',
-    description='Cookiecutter template for a Python package',
-    author='Audrey Roy Greenfeld',
+    description='Cookiecutter template for a QA package',
+    author='Davide Moro',
     license='BSD',
-    author_email='aroy@alum.mit.edu',
+    author_email='davide.moro@gmail.com',
     url='https://github.com/tierratelematics/cookiecutter-qa',
     keywords=['cookiecutter', 'template', 'package', ],
     classifiers=[
