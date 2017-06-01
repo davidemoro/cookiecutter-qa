@@ -1,21 +1,21 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+.. {{cookiecutter.project_slug}} documentation master file, created by
+   sphinx-quickstart on Tue Sep 13 16:37:58 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-Contents:
+.. include:: ./README.rst
+
+Index
+----------
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   readme
-   installation
-   usage
-   contributing
-   {% if cookiecutter.create_author_file == 'y' -%}authors
-   {% endif -%}history
+    {{cookiecutter.project_slug}} <README>
+    Advanced <advanced>
+    Contributors <contributors>
+    Changelog <changes>
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. _py.test: https://github.com/pytest-dev/pytest
+.. _pytest-splinter: https://github.com/pytest-dev/pytest-splinter
+.. _pytest-bdd: https://github.com/pytest-dev/pytest-bdd

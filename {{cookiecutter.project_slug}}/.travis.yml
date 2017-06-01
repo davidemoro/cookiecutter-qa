@@ -1,34 +1,66 @@
-# Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
 language: python
-python: 3.5
+sudo: required 
+
+addons:
+  firefox: "latest"
+
+python:
+  - "2.7"
+  - "3.5"
 
 env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
+  - TOXENV=phantomjs
+  - TOXENV=firefox
+  - TOXENV=chrome
+  - TOXENV=docs
+  - TOXENV=linkcheck
+  - TOXENV=codecov
+  - TOXENV=pycodestyle
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox
+matrix:
+  allow_failures:
+  - env: TOXENV=firefox
+  - env: TOXENV=chrome
+  - env: TOXENV=linkcheck
+  - python: "3.5"
+  exclude:
+  - python: "3.5"
+    env: TOXENV=docs
+  - python: "3.5"
+    env: TOXENV=linkcheck
+  - python: "3.5"
+    env: TOXENV=codecov
 
-# command to run tests, e.g. python setup.py test
-script: tox -e ${TOXENV}
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y graphviz
+  
+install:
+  - travis_retry pip install -U pip wheel setuptools
+  - travis_retry pip install -r requirements.txt
+  - travis_retry pip install -r docs_requirements.txt
+  - travis_retry pip install -r tests_requirements.txt
+  - python setup.py develop
 
-{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
+script:
+  - export PATH="$PATH:`pwd`/bin"
+  - ./scripts/setup_travis.sh
+  - tox -e ${TOXENV} -- --variables credentials_template.yml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -e ${TOXENV}
+
 deploy:
   provider: pypi
-  distributions: sdist bdist_wheel
-  user: {{ cookiecutter.pypi_username }}
+  user: davidemoro
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: dohbJBWbRQhxMA0JJfR23EEoVh5n+X5I9Sf6YTwM19eWO/PVIDHRmKGw5PgsEkKK7Xh5QBHSAck3TB/++l2wTh7Plp4twX+IIOo+xLcnKepGJ4yBlxtuO/PDqpYqoDrnwc1V7XWoRFJyzkO/TnZRwSaUzVXp2Z47TFvy6cihtXaW1jD8DvVWfHLHb86uP81J3YczuwWKUVb3r01+ZlTIJnNFCOa3JlRWbY+OpYHyZfJq1ed6K80sbVLZ0tZixTQWbrArvImMapr7Z1H+jb7/Zf+KEdmg+O5GOs0RU+TbNSRT9dGtt7q4GqmzZPY0k1zd18YBO69tx6thSxwudS6R7eWFTnm53KX4SzWuCZtt4YeSyn/aRVZO4EznWkXXhbw1axKqlLaMHzxOwh0zub+wrNBtpuCdFE8177kQOwMAKfz08xgGom8QfYLBQr8e/lFPgasD2lJYN2pe8sg4mhH4z8iY2UicQxjSGOgb8ZXyJAR0iAlY5YTj5iJ9q/vzk68Q/41kb3Si0FWlYNZqV4nJiDNCSEN3NIy3xW2twFvQDHZmjtLdOp/eLX8IGRou3hZm3VfU5wz+zY6+UmRBr6qv9sKma2w44zE11wyvGe7TuyQBe0qXQqW+lqA/wTdNm4zeZWHA/yee7FN+0bUjsUoMfKYtmb5fWg/dqocE+UdB8iY=
   on:
     tags: true
-    repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    condition: $TOXENV == py27
-{%- endif %}
+    distributions: sdist bdist_wheel
+repo: tierratelematics/{{cookiecutter.project_slug}}

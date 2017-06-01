@@ -1,0 +1,7 @@
+Contributors
+============
+
+* Tierra QA team <DLQA@tierratelematics.com>
+* `Full contributors list`_
+
+.. _Full contributors list: https://github.com/tierratelematics/{{cookiecutter.project_slug}}/graphs/contributors
