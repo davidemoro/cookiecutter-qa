@@ -4,7 +4,7 @@
   "github_username": "tierratelematics",
   "project_name": "Project QA",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "Project QA contains all the boilerplate you need to create a QA package.",
+  "project_short_description": "Project QA contains all the boilerplate you need to create a QA package",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
   "create_author_file": "y",
