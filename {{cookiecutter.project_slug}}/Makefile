@@ -84,3 +84,9 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+docker-build:
+	docker build -t {{cookiecutter.project_slug}} .
+
+docker-run:
+	docker run --rm -it {{cookiecutter.project_slug}}
