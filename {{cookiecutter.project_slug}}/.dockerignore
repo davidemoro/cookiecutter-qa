@@ -1,0 +1,11 @@
+.*
+Dockerfile
+python
+docs
+**/*.egg-info
+**/*.pyc
+**/*.pyo
+**/*.swp
+**/*.log
+**/*.xml
+**/__pycache__
