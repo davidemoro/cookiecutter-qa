@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.1dev'
+version = '{{ cookiecutter.version }}dev'
 
 
 install_requires = [
@@ -27,25 +27,31 @@ docs_require = [
 
 setup(name='{{cookiecutter.project_slug}}',
       version=version,
-      description="Tierra QA",
+      description="{{ cookiecutter.project_short_description }}",
       long_description=open("README.rst").read() + "\n" +
       open("CHANGES.rst").read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
           "Programming Language :: Python",
+          "Intended Audience :: Developers",
           "Framework :: Pytest",
           "Topic :: Software Development :: Testing",
-          "License :: OSI Approved :: Apache Software License",
+{%- if cookiecutter.open_source_license in license_classifiers %}
+          '{{ license_classifiers[cookiecutter.open_source_license] }}',
+{%- endif %}
+          "Programming Language :: Python :: 2.7",
           "Programming Language :: Python :: 3.5",
           "Programming Language :: Python :: 3.6",
           "Programming Language :: Python :: Implementation :: PyPy",
           ],
-      keywords='',
-      author='Davide Moro',
-      author_email='davide.moro@gmail.com',
-      url='http://tierratelematics.com',
-      license='Apache License, Version 2.0',
+      keywords='{{ cookiecutter.project_slug }}',
+      author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
+      author_email='{{ cookiecutter.email }}',
+      url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+{%- if cookiecutter.open_source_license in license_classifiers %}
+      license="{{ cookiecutter.open_source_license }}",
+{%- endif %}
       packages=find_packages(exclude=['ez_setup']),
       include_package_data=True,
       zip_safe=False,
