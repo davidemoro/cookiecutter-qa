@@ -40,5 +40,11 @@ As result cookiecutter will create for you a new package.
 
 You will be able to choose a very basic setup or a more opinionated stack.
 
+Sponsored by
+============
+
+* _Browserstack
+
 .. _tierra_qa: https://github.com/tierratelematics/tierra_qa
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Browserstack: http://browserstack.com/
