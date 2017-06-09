@@ -43,8 +43,9 @@ You will be able to choose a very basic setup or a more opinionated stack.
 Sponsored by
 ============
 
-* _Browserstack
+.. image:: https://raw.githubusercontent.com/tierratelematics/cookiecutter-qa/master/docs/_static/browserstack.svg
+     :target: https://raw.githubusercontent.com/tierratelematics/cookiecutter-qa/master/docs/_static/browserstack.svg
+     :alt: Browserstack
 
 .. _tierra_qa: https://github.com/tierratelematics/tierra_qa
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _Browserstack: http://browserstack.com/
