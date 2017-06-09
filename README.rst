@@ -2,9 +2,8 @@
 cookiecutter QA
 ===============
 
-.. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/shield.svg
-     :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
-     :alt: Updates
+.. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
+          :target: http://cookiecutter-qa.readthedocs.io
 
 This is a (still work in progress) complete rewrite of the tierra_qa_ package
 empowered by the Cookiecutter_ scaffolding project.
