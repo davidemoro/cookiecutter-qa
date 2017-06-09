@@ -42,7 +42,7 @@ and bake your new QA package providing some information::
 
 As result cookiecutter will create for you a new package.
 
-If you want to launch your hello world Selenium based tests against _Browserstack you can just
+If you want to launch your hello world Selenium based tests against Browserstack_ you can just
 type the following commands::
 
     $ make docker-build
