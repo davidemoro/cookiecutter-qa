@@ -44,7 +44,7 @@ Sponsored by
 ============
 
 .. image:: https://raw.githubusercontent.com/tierratelematics/cookiecutter-qa/master/docs/_static/browserstack.eps
-     :target: https://raw.githubusercontent.com/tierratelematics/cookiecutter-qa/master/docs/_static/browserstack.svg
+     :target: https://www.browserstack.com
      :alt: Browserstack
 
 .. _tierra_qa: https://github.com/tierratelematics/tierra_qa
