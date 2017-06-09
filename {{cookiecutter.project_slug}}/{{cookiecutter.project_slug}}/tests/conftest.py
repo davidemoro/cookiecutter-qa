@@ -100,8 +100,11 @@ def splinter_screenshot_dir():
 
 
 @pytest.fixture(scope='session')
-def splinter_driver_kwargs(splinter_webdriver):
+def splinter_driver_kwargs(splinter_webdriver, variables):
     """Webdriver kwargs."""
-    if splinter_webdriver == 'firefox':
-        return {'capabilities': {'marionette': True}}
-    return {}
+    capabilities = {}
+    if splinter_webdriver == 'remote':
+        {{cookiecutter.project_slug}}_settings = variables.get('{{cookiecutter.project_slug}}', {})
+        capabilities = {{cookiecutter.project_slug}}_settings and {{cookiecutter.project_slug}}_settings.get(
+            'capabilities', {}) or {}
+    return capabilities
