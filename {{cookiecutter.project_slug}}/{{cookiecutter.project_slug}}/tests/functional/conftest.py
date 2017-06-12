@@ -1,17 +1,7 @@
 # coding=utf-8
 """Login feature tests."""
 
-import uuid
-import pytest
 import pytest_bdd
-
-
-@pytest.fixture(scope='session')
-def test_run_identifier():
-    """ Return a session based random prefixed UUID used for
-        identifying data created in this test run.
-    """
-    return "QA-{0}".format(str(uuid.uuid1()))
 
 
 @pytest_bdd.given(pytest_bdd.parsers.parse('I am logged in as {user_id}'))
