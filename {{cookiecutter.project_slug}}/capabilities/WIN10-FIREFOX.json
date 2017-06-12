@@ -1,11 +1,11 @@
 {
-    "{{cookiecutter.project_slug}}": {
+    "pcm2_qa": {
         "capabilities": {
             "browser": "Firefox",
             "browser_version": "53.0",
             "os": "Windows",
             "os_version": "10",
-            "resolution": "1024x768"
+            "resolution": "1280x1024"
         }
     }
 }
