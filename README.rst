@@ -42,11 +42,46 @@ and bake your new QA package providing some information::
 
 As result cookiecutter will create for you a new package.
 
+
+How to use it
+=============
+
+
+If you want to perform a quick tour create a Browserstack_ free account and you will be able to
+run your tests against a real remote browser without having to install locally all the needed
+prerequisites (geckodriver, chromedriver, adjust executable paths, etc).
+
+Once logged in on Browserstack_ visit ``Account > Settings``, copy the Automate's username and access key
+and generate a new cookiecutter project providing username and access key when asked (``browserstack_username``
+and ``browserstack_access_key``)
+
+Docker
+------
+
 If you want to launch your hello world Selenium based tests against Browserstack_ you can just
-type the following commands::
+type the following commands (Docker required)::
 
     $ make docker-build
     $ make docker-run
+
+or::
+
+    $ docker run --rm -it pcm2_qa -epy36 -- \
+        -vvv --splinter-webdriver=remote \
+        --variables=credentials_tepmlate.yml \
+        --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --variables capabilities/WIN10-FIREFOX.json
+
+Tox
+---
+
+With tox::
+
+    $ pip install tox
+    $ tox -epy35 -- -vvv --splinter-webdriver=remote \
+        --variables=credentials_template.yml \
+        --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --variables capabilities/WIN10-FIREFOX.json
 
 
 In the next future you will be able to choose a very basic test example or another one with a
