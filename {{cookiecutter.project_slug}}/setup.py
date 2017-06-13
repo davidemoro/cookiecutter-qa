@@ -8,7 +8,7 @@ install_requires = [
     'pytest-splinter',
     'pytest-variables[yaml]',
     'pypom_form',
-    # 'pytest-pypom-navigation',
+    'pytest-pypom-navigation',
     'colander',
 ]
 
