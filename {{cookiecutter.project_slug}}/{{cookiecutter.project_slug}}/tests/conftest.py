@@ -73,7 +73,7 @@ def default_pages():
                 'skin1': 'mypackage.pages.BasePage',
             }
     """
-    return {'skin1': '{{cookiecutter.project_slug}}.pages.BasePage'}
+    return DEFAULT_PAGES
 
 
 @pytest.fixture(scope="session")
