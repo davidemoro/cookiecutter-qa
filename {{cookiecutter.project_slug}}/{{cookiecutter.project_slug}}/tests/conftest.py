@@ -76,6 +76,13 @@ def default_pages():
     return DEFAULT_PAGES
 
 
+@pytest.fixture(scope='session')
+def base_url(skin, variables):
+    """ Returns the base_url associated to the skin.
+    """
+    return variables['skins'][skin]['base_url']
+
+
 @pytest.fixture(scope="session")
 def page_mappings():
     """
