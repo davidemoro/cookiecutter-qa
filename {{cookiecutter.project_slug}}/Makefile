@@ -88,5 +88,5 @@ install: clean ## install the package to the active Python's site-packages
 docker-build:
 	docker build -t {{cookiecutter.project_slug}} .
 
-docker-run:
+docker-run: docker-build
 	docker run --rm -it {{cookiecutter.project_slug}}

@@ -61,7 +61,6 @@ Docker
 If you want to launch your hello world Selenium based tests against Browserstack_ you can just
 type the following commands (Docker required)::
 
-    $ make docker-build
     $ make docker-run
 
 or::
