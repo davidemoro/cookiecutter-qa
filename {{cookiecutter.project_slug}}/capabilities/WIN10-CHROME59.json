@@ -1,0 +1,11 @@
+{
+    "pcm2_qa": {
+        "capabilities": {
+            "browser": "Chrome",
+            "browser_version": "59.0",
+            "os": "Windows",
+            "os_version": "10",
+            "resolution": "1280x1024"
+        }
+    }
+}
