@@ -85,6 +85,7 @@ setup(name='{{cookiecutter.project_slug}}',
       # -*- Entry points: -*-
       """,
       {%- endif %}
+      test_suite='tests',
       extras_require={
           'docs': docs_require,
           'tests': tests_require,
