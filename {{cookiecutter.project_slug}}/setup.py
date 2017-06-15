@@ -4,12 +4,19 @@ version = '{{ cookiecutter.version }}dev'
 
 
 install_requires = [
-    'pytest-bdd',
-    'pytest-splinter',
-    'pytest-variables[yaml]',
-    'pypom_form',
+{%- if cookiecutter.advanced  == 'y' %}
     'pytest-pypom-navigation',
     'colander',
+    'pytest-variables[yaml]',
+    'pytest-bdd',
+    'pytest-splinter',
+    'pypom_form',
+{% else %}
+    'pytest-selenium',
+{%- endif %}
+{%- if cookiecutter.testrail == 'y' %}
+    'pytest-testrail',
+{%- endif %}
 ]
 
 tests_require = [

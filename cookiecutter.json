@@ -1,4 +1,5 @@
 {
+  "advanced": "y",
   "full_name": "Davide Moro",
   "email": "davide.moro@gmail.com",
   "github_username": "tierratelematics",
@@ -11,5 +12,6 @@
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
   "base_url": "http://tierratelematics.com",
   "browserstack_username": "USERNAME",
-  "browserstack_access_key": "ACCESS_KEY"
+  "browserstack_access_key": "ACCESS_KEY",
+  "testrail": "y"
 }

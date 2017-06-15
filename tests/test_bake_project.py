@@ -33,7 +33,8 @@ def inside_dir(dirpath):
 def bake_in_temp_dir(cookies, *args, **kwargs):
     """
     Delete the temporal directory that is created when executing the tests
-    :param cookies: pytest_cookies.Cookies, cookie to be baked and its temporal files will be removed
+    :param cookies: pytest_cookies.Cookies, cookie to be baked and its
+                    temporalfiles will be removed
     """
     result = cookies.bake(*args, **kwargs)
     try:
@@ -84,6 +85,7 @@ def test_bake_with_defaults(cookies):
         assert 'setup.cfg' in found_toplevel_files
         assert 'tox.ini' in found_toplevel_files
         assert 'credentials_template.yml' in found_toplevel_files
+        assert 'testrail.cfg' in found_toplevel_files
 
         found_secondlevel_files = [subitem.basename for subitem in 
             [item for item in result.project.visit('project_qa')][0].listdir()]
@@ -92,6 +94,37 @@ def test_bake_with_defaults(cookies):
         assert 'config.py' in found_secondlevel_files
         assert 'pages' in found_secondlevel_files
         assert 'features' in found_secondlevel_files
+
+        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        with open(setup_py_path) as setup_py_file:
+            assert 'pytest-testrail' in setup_py_file.read()
+
+
+def test_bake_with_testrail(cookies):
+    """ testrail support """
+    with bake_in_temp_dir(cookies) as result:
+        assert result.project.isdir()
+        assert result.exit_code == 0
+        assert result.exception is None
+
+        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        with open(setup_py_path) as setup_py_file:
+            assert 'pytest-testrail' in setup_py_file.read()
+
+
+def test_bake_without_testrail(cookies):
+    """ testrail support """
+    with bake_in_temp_dir(cookies, extra_context={'testrail': "n"}) as result:
+        assert result.project.isdir()
+        assert result.exit_code == 0
+        assert result.exception is None
+
+        found_toplevel_files = [f.basename for f in result.project.listdir()]
+        assert 'testrail.cfg' not in found_toplevel_files
+
+        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        with open(setup_py_path) as setup_py_file:
+            assert 'pytest-testrail' not in setup_py_file.read()
 
 
 # def test_bake_and_run_tests(cookies):
