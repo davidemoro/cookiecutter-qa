@@ -18,6 +18,7 @@ and bake your new QA package providing some information::
 
     $ pip install cookiecutter
     $ cookiecutter https://github.com/tierratelematics/cookiecutter-qa
+    advanced [y]:
     full_name [Davide Moro]: 
     email [davide.moro@gmail.com]: 
     github_username [tierratelematics]: 
@@ -33,10 +34,15 @@ and bake your new QA package providing some information::
     4 - Apache Software License 2.0
     5 - GNU General Public License v3
     6 - Not open source
-    Choose from 1, 2, 3, 4, 5, 6 [1]: 
+    Choose from 1, 2, 3, 4, 5, 6 [1]: 4
+    Select command_line_interface:
+    1 - Click
+    2 - No command-line interface
+    Choose from 1, 2 [1]: 2
     base_url [http://tierratelematics.com]: 
     browserstack_username [USERNAME]: YOUR_BROWSERSTACK_USERNAME_HERE
     browserstack_access_key [ACCESS_KEY]: YOUR_BROWSERSTACK_ACCESS_KEY_HERE
+    testrail [y]:
     $ cd project_qa
 
 As result cookiecutter will create for you a new package.
