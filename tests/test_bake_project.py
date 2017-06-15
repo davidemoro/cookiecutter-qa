@@ -7,8 +7,6 @@ import yaml
 import datetime
 from cookiecutter.utils import rmtree
 
-from click.testing import CliRunner
-
 if sys.version_info > (3, 0):
     import importlib
 else:
@@ -87,7 +85,8 @@ def test_bake_with_defaults(cookies):
         assert 'credentials_template.yml' in found_toplevel_files
         assert 'testrail.cfg' in found_toplevel_files
 
-        found_secondlevel_files = [subitem.basename for subitem in 
+        found_secondlevel_files = [
+            subitem.basename for subitem in
             [item for item in result.project.visit('project_qa')][0].listdir()]
         assert 'tests' in found_secondlevel_files
         assert '__init__.py' in found_secondlevel_files
@@ -95,7 +94,8 @@ def test_bake_with_defaults(cookies):
         assert 'pages' in found_secondlevel_files
         assert 'features' in found_secondlevel_files
 
-        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        setup_py_path = [f.strpath for f in result.project.listdir()
+                         if f.basename == 'setup.py'][0]
         with open(setup_py_path) as setup_py_file:
             assert 'pytest-testrail' in setup_py_file.read()
 
@@ -107,7 +107,8 @@ def test_bake_with_testrail(cookies):
         assert result.exit_code == 0
         assert result.exception is None
 
-        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        setup_py_path = [f.strpath for f in result.project.listdir()
+                         if f.basename == 'setup.py'][0]
         with open(setup_py_path) as setup_py_file:
             assert 'pytest-testrail' in setup_py_file.read()
 
@@ -122,7 +123,8 @@ def test_bake_without_testrail(cookies):
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'testrail.cfg' not in found_toplevel_files
 
-        setup_py_path = [f.strpath for f in result.project.listdir() if f.basename == 'setup.py'][0]
+        setup_py_path = [f.strpath for f in result.project.listdir()
+                         if f.basename == 'setup.py'][0]
         with open(setup_py_path) as setup_py_file:
             assert 'pytest-testrail' not in setup_py_file.read()
 
@@ -146,30 +148,6 @@ def test_bake_without_testrail(cookies):
 #     with bake_in_temp_dir(cookies, extra_context={'full_name': "O'connor"}) as result:
 #         assert result.project.isdir()
 #         run_inside_dir('python setup.py test', str(result.project)) == 0
-
-
-# def test_bake_and_run_travis_pypi_setup(cookies):
-#     # given:
-#     with bake_in_temp_dir(cookies) as result:
-#         project_path = str(result.project)
-
-#         # when:
-#         travis_setup_cmd = ('python travis_pypi_setup.py'
-#                             ' --repo tierratelematics/cookiecutter-qa --password invalidpass')
-#         run_inside_dir(travis_setup_cmd, project_path)
-#         # then:
-#         result_travis_config = yaml.load(result.project.join(".travis.yml").open())
-#         min_size_of_encrypted_password = 50
-#         assert len(result_travis_config["deploy"]["password"]["secure"]) > min_size_of_encrypted_password
-
-
-# def test_bake_without_travis_pypi_setup(cookies):
-#     with bake_in_temp_dir(cookies, extra_context={'use_pypi_deployment_with_travis': 'n'}) as result:
-#         result_travis_config = yaml.load(result.project.join(".travis.yml").open())
-#         assert "deploy" not in result_travis_config
-#         assert "python" == result_travis_config["language"]
-#         found_toplevel_files = [f.basename for f in result.project.listdir()]
-#         assert 'travis_pypi_setup.py' not in found_toplevel_files
 
 
 # def test_bake_without_author_file(cookies):
