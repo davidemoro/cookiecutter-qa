@@ -204,22 +204,6 @@ def test_bake_not_open_source(cookies):
         assert 'License' not in result.project.join('README.rst').read()
 
 
-# def test_project_with_hyphen_in_module_name(cookies):
-#     result = cookies.bake(extra_context={'project_name': 'something-with-a-dash'})
-#     assert result.project is not None
-#     project_path = str(result.project)
-
-#     # when:
-#     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo tierratelematics/cookiecutter-qa --password invalidpass')
-#     run_inside_dir(travis_setup_cmd, project_path)
-
-#     # then:
-#     result_travis_config = yaml.load(open(os.path.join(project_path, ".travis.yml")))
-#     assert "secure" in result_travis_config["deploy"]["password"],\
-#         "missing password config in .travis.yml"
-
-
 # def test_bake_with_no_console_script(cookies):
 #     context = {'command_line_interface': "No command-line interface"}
 #     result = cookies.bake(extra_context=context)
