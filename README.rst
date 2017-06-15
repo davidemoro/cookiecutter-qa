@@ -24,7 +24,6 @@ and bake your new QA package providing some information::
     project_name [Project QA]: 
     project_slug [project_qa]: 
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
-    pypi_username [tierratelematics]: 
     version [0.0.1]: 
     create_author_file [y]: 
     Select open_source_license:
