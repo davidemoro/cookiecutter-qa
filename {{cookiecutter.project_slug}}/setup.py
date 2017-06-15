@@ -17,6 +17,9 @@ install_requires = [
 {%- if cookiecutter.testrail == 'y' %}
     'pytest-testrail',
 {%- endif %}
+    {%- if cookiecutter.command_line_interface|lower == 'click' %}
+    'Click>=6.0',
+    {%- endif %}
 ]
 
 tests_require = [
@@ -71,9 +74,17 @@ setup(name='{{cookiecutter.project_slug}}',
       include_package_data=True,
       zip_safe=False,
       install_requires=install_requires,
+      {%- if 'no' not in cookiecutter.command_line_interface|lower %}
+      entry_points={
+          'console_scripts': [
+              '{{ cookiecutter.project_slug }}={{ cookiecutter.project_slug }}.cli:main'
+          ]
+      },
+      {%- else %}
       entry_points="""
       # -*- Entry points: -*-
       """,
+      {%- endif %}
       extras_require={
           'docs': docs_require,
           'tests': tests_require,
