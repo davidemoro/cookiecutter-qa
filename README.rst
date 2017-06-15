@@ -64,7 +64,7 @@ type the following commands (Docker required)::
 
 or::
 
-    $ docker run --rm -it pcm2_qa -epy36 -- \
+    $ docker run --rm -it project_qa -epy36 -- \
         -vvv --splinter-webdriver=remote \
         --variables=credentials_tepmlate.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
