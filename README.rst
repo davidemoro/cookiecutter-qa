@@ -11,8 +11,6 @@ cookiecutter QA
 This is a (still work in progress) complete rewrite of the tierra_qa_ package
 empowered by the Cookiecutter_ scaffolding project.
 
-Until the rewrite has finished please refer to the original tierra_qa_ project meantime.
-
 Usage
 =====
 
