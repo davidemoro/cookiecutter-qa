@@ -4,7 +4,6 @@ python: 3.5
 env:
   - TOXENV=py27
   - TOXENV=py35
-  - TOXENV=pypy
 
 install:
   - pip install -U tox
