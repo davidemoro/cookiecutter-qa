@@ -2,6 +2,9 @@
 cookiecutter QA
 ===============
 
+.. image:: https://travis-ci.org/tierratelematics/cookiecutter-qa.svg?branch=master
+       :target: https://travis-ci.org/tierratelematics/cookiecutter-qa
+
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
           :target: http://cookiecutter-qa.readthedocs.io
 
