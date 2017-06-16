@@ -7,7 +7,7 @@ MarkupSafe==1.0
 packaging==16.8
 parse==1.8.0
 parse-type==0.3.4
-py==1.4.33
+py==1.4.34
 PyPOM==1.1.1
 pypom-form==0.2.0
 pytest==3.0.7
