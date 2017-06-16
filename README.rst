@@ -5,11 +5,16 @@ cookiecutter QA
 .. image:: https://travis-ci.org/tierratelematics/cookiecutter-qa.svg?branch=master
        :target: https://travis-ci.org/tierratelematics/cookiecutter-qa
 
-.. image:: https://requires.io/github/tierratelematics/cookiecutter-qa/requirements.svg?branch=master
-          :target: https://requires.io/github/tierratelematics/cookiecutter-qa/requirements/?branch=master
+.. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/shield.svg
+       :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
+       :alt: Updates
+
+.. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/python-3-shield.svg
+       :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
+       :alt: Python 3
 
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
-          :target: http://cookiecutter-qa.readthedocs.io
+       :target: http://cookiecutter-qa.readthedocs.io
 
 Coookiecutter QA let you create QA projects based on the Cookiecutter_ scaffolding project.
 
