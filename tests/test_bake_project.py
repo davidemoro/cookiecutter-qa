@@ -163,13 +163,31 @@ def test_bake_withspecialchars_and_run_tests(cookies, default_extra_context):
         run_inside_dir('make docker-run', str(result.project)) == 0
 
 
-def test_bake_with_apostrophe_and_run_tests(cookies):
+def test_bake_with_apostrophe_and_run_tests(cookies, default_extra_context):
     """Ensure that a `full_name` with apostrophes does not break setup.py"""
     extra_context = default_extra_context.copy()
     extra_context['full_name'] = "O'connor"
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('python setup.py test', str(result.project)) == 0
+        run_inside_dir('make docker-run', str(result.project)) == 0
+
+
+def test_bake_with_basic_and_run_tests(cookies, default_extra_context):
+    """Ensure that an advanced n doesn't break things"""
+    extra_context = default_extra_context.copy()
+    extra_context['advanced'] = "n"
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        assert result.project.isdir()
+        run_inside_dir('make docker-run', str(result.project)) == 0
+
+
+def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
+    """Ensure that an without testrail doesn't break things"""
+    extra_context = default_extra_context.copy()
+    extra_context['testrail'] = "n"
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        assert result.project.isdir()
+        run_inside_dir('make docker-run', str(result.project)) == 0
 
 
 # def test_bake_without_author_file(cookies):
