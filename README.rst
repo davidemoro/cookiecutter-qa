@@ -8,7 +8,7 @@ cookiecutter QA
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
           :target: http://cookiecutter-qa.readthedocs.io
 
-`cookiecutter-qa` let you create QA projects based on the Cookiecutter_ scaffolding project.
+Coookiecutter QA let you create QA projects based on the Cookiecutter_ scaffolding project.
 
 Usage
 =====
