@@ -89,4 +89,4 @@ docker-build:
 	docker build -t {{cookiecutter.project_slug}} .
 
 docker-run: docker-build
-	docker run --rm -it {{cookiecutter.project_slug}}
+	docker run --rm -i {{cookiecutter.project_slug}}
