@@ -15,7 +15,7 @@ pytest-bdd==2.18.2
 pytest-splinter==1.8.5
 pytest-variables==1.6.1
 PyYAML==3.12
-selenium==3.4.2
+selenium==3.4.3
 six==1.10.0
 splinter==0.7.5
 pytest-pypom-navigation==0.0.1
