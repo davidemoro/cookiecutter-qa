@@ -135,7 +135,7 @@ def test_bake_and_run_tests(cookies):
     with bake_in_temp_dir(
             cookies,
             extra_context={
-                'browserstack_user': "davidemoro2",
+                'browserstack_username': "davidemoro2",
                 'browserstack_access_key': 'dXoGjyFSzem5hYywqYPx'}) as result:
         assert result.project.isdir()
         run_inside_dir('make docker-run', str(result.project)) == 0
