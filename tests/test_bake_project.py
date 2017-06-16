@@ -1,3 +1,4 @@
+import pytest
 from contextlib import contextmanager
 import shlex
 import os
@@ -13,6 +14,18 @@ if sys.version_info > (3, 0):
     import importlib
 else:
     import imp
+
+
+BROWSERSTACK_USERNAME = "davidemoro2"
+BROWSERSTACK_ACCESS_KEY = 'dXoGjyFSzem5hYywqYPx'
+
+
+@pytest.fixture
+def default_extra_context():
+    return {
+        'browserstack_username': BROWSERSTACK_USERNAME,
+        'browserstack_access_key': BROWSERSTACK_ACCESS_KEY
+    }
 
 
 @contextmanager
@@ -131,29 +144,32 @@ def test_bake_without_testrail(cookies):
             assert 'pytest-testrail' not in setup_py_file.read()
 
 
-def test_bake_and_run_tests(cookies):
+def test_bake_and_run_tests(cookies, default_extra_context):
+    extra_context = default_extra_context.copy()
     with bake_in_temp_dir(
             cookies,
-            extra_context={
-                'browserstack_username': "davidemoro2",
-                'browserstack_access_key': 'dXoGjyFSzem5hYywqYPx'}) as result:
+            extra_context=extra_context) as result:
         assert result.project.isdir()
         run_inside_dir('make docker-run', str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
 
 
-# def test_bake_withspecialchars_and_run_tests(cookies):
-#     """Ensure that a `full_name` with double quotes does not break setup.py"""
-#     with bake_in_temp_dir(cookies, extra_context={'full_name': 'name "quote" name'}) as result:
-#         assert result.project.isdir()
-#         run_inside_dir('python setup.py test', str(result.project)) == 0
+def test_bake_withspecialchars_and_run_tests(cookies, default_extra_context):
+    """Ensure that a `full_name` with double quotes does not break setup.py"""
+    extra_context = default_extra_context.copy()
+    extra_context['full_name'] = 'name "quote" name'
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        assert result.project.isdir()
+        run_inside_dir('make docker-run', str(result.project)) == 0
 
 
-# def test_bake_with_apostrophe_and_run_tests(cookies):
-#     """Ensure that a `full_name` with apostrophes does not break setup.py"""
-#     with bake_in_temp_dir(cookies, extra_context={'full_name': "O'connor"}) as result:
-#         assert result.project.isdir()
-#         run_inside_dir('python setup.py test', str(result.project)) == 0
+def test_bake_with_apostrophe_and_run_tests(cookies):
+    """Ensure that a `full_name` with apostrophes does not break setup.py"""
+    extra_context = default_extra_context.copy()
+    extra_context['full_name'] = "O'connor"
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        assert result.project.isdir()
+        run_inside_dir('python setup.py test', str(result.project)) == 0
 
 
 # def test_bake_without_author_file(cookies):
