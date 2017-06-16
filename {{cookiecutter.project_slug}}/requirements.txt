@@ -5,7 +5,7 @@ iso8601==0.1.11
 Mako==1.0.6
 MarkupSafe==1.0
 packaging==16.8
-parse==1.8.0
+parse==1.8.2
 parse-type==0.3.4
 py==1.4.33
 PyPOM==1.1.1
