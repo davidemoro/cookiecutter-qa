@@ -8,8 +8,7 @@ cookiecutter QA
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
           :target: http://cookiecutter-qa.readthedocs.io
 
-This is a (still work in progress) complete rewrite of the tierra_qa_ package
-empowered by the Cookiecutter_ scaffolding project.
+`cookiecutter-qa` let you create QA projects based on the Cookiecutter_ scaffolding project.
 
 Usage
 =====
@@ -92,6 +91,26 @@ With tox::
 In the next future you will be able to choose a very basic test example or another one with a
 more opinionated stack.
 
+
+Credits
+=======
+
+* heavily based on `cookiecutter-pypackage`_: `@audreyr`_'s ultimate Python package project
+  template.
+
+Twitter
+=======
+
+cookiecutter-qa tweets happens here:
+
+* `@davidemoro`_
+
+
+Based on
+========
+
+.. image:: https://raw.github.com/audreyr/cookiecutter/3ac078356adf5a1a72042dfe72ebfa4a9cd5ef38/logo/cookiecutter_medium.png
+
 Sponsored by
 ============
 
@@ -102,3 +121,6 @@ Sponsored by
 .. _tierra_qa: https://github.com/tierratelematics/tierra_qa
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _Browserstack: https://www.browserstack.com
+.. _`@audreyr`: https://github.com/audreyr
+.. _`cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`@davidemoro`: https://twitter.com/davidemoro
