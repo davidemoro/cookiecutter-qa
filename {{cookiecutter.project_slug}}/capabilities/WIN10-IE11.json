@@ -1,5 +1,5 @@
 {
-    "pcm2_qa": {
+    "{{cookiecutter.projectslug}}": {
         "capabilities": {
             "browser": "INTERNETEXPLORER",
             "browser_version": "11.0",

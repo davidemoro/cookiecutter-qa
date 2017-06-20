@@ -1,5 +1,5 @@
 {
-    "pcm2_qa": {
+    "{{cookiecutter.projectslug}}": {
         "capabilities": {
             "browser": "Firefox",
             "browser_version": "53.0",

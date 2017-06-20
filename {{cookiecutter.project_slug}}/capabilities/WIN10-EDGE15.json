@@ -1,5 +1,5 @@
 {
-    "pcm2_qa": {
+    "{{cookiecutter.projectslug}}": {
         "capabilities": {
             "browser": "Edge",
             "browser_version": "15.0",
