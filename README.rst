@@ -85,7 +85,7 @@ or::
         -vvv --splinter-webdriver=remote \
         --variables=credentials_tepmlate.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/WIN10-FIREFOX.json
+        --variables capabilities/WIN10-FIREFOX53.json
 
 Tox
 ---
@@ -96,7 +96,7 @@ With tox::
     $ tox -epy35 -- -vvv --splinter-webdriver=remote \
         --variables=credentials_template.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/WIN10-FIREFOX.json
+        --variables capabilities/WIN10-FIREFOX53.json
 
 
 In the next future you will be able to choose a very basic test example or another one with a
