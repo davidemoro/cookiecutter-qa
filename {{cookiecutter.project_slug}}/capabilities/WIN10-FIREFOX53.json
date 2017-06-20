@@ -1,5 +1,5 @@
 {
-    "{{cookiecutter.projectslug}}": {
+    "{{cookiecutter.project_slug}}": {
         "capabilities": {
             "browser": "Firefox",
             "browser_version": "53.0",

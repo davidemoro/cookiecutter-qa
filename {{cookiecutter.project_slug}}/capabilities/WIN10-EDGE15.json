@@ -1,5 +1,5 @@
 {
-    "{{cookiecutter.projectslug}}": {
+    "{{cookiecutter.project_slug}}": {
         "capabilities": {
             "browser": "Edge",
             "browser_version": "15.0",

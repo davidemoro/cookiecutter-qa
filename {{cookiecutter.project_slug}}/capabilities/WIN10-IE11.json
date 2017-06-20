@@ -1,5 +1,5 @@
 {
-    "{{cookiecutter.projectslug}}": {
+    "{{cookiecutter.project_slug}}": {
         "capabilities": {
             "browser": "INTERNETEXPLORER",
             "browser_version": "11.0",
