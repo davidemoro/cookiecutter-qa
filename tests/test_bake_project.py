@@ -15,8 +15,8 @@ else:
     import imp
 
 
-BROWSERSTACK_USERNAME = "davidemoro2"
-BROWSERSTACK_ACCESS_KEY = 'dXoGjyFSzem5hYywqYPx'
+BROWSERSTACK_USERNAME = os.getenv('BROWSERSTACK_USERNAME', "davidemoro2")
+BROWSERSTACK_ACCESS_KEY = os.getenv('BROWSERSTACK_ACCESS_KEY', '')
 
 
 @pytest.fixture
@@ -62,7 +62,10 @@ def run_inside_dir(command, dirpath):
     :param dirpath: String, path of the directory the command is being run.
     """
     with inside_dir(dirpath):
-        return subprocess.check_call(shlex.split(command))
+        with open(os.devnull, 'w') as devnull:
+            return subprocess.check_call(shlex.split(command),
+                                         stdout=devnull,
+                                         stderr=devnull)
 
 
 def check_output_inside_dir(command, dirpath):
@@ -143,35 +146,35 @@ def test_bake_without_testrail(cookies):
             assert 'pytest-testrail' not in setup_py_file.read()
 
 
-@pytest.mark.xfail
 def test_bake_and_run_tests(cookies, default_extra_context):
     extra_context = default_extra_context.copy()
     with bake_in_temp_dir(
             cookies,
             extra_context=extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('make docker-run', str(result.project)) == 0
+        run_inside_dir('make docker-run',
+                       str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
 
 
-@pytest.mark.xfail
 def test_bake_withspecialchars_and_run_tests(cookies, default_extra_context):
     """Ensure that a `full_name` with double quotes does not break setup.py"""
     extra_context = default_extra_context.copy()
     extra_context['full_name'] = 'name "quote" name'
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('make docker-run', str(result.project)) == 0
+        run_inside_dir('make docker-run',
+                       str(result.project)) == 0
 
 
-@pytest.mark.xfail
 def test_bake_with_apostrophe_and_run_tests(cookies, default_extra_context):
     """Ensure that a `full_name` with apostrophes does not break setup.py"""
     extra_context = default_extra_context.copy()
     extra_context['full_name'] = "O'connor"
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('make docker-run', str(result.project)) == 0
+        run_inside_dir('make docker-run',
+                       str(result.project)) == 0
 
 
 # # still not implemented, commented
@@ -184,14 +187,14 @@ def test_bake_with_apostrophe_and_run_tests(cookies, default_extra_context):
 #         run_inside_dir('make docker-run', str(result.project)) == 0
 
 
-@pytest.mark.xfail
 def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
     """Ensure that an without testrail doesn't break things"""
     extra_context = default_extra_context.copy()
     extra_context['testrail'] = "n"
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('make docker-run', str(result.project)) == 0
+        run_inside_dir('make docker-run',
+                       str(result.project)) == 0
 
 
 def test_bake_without_author_file(cookies):
