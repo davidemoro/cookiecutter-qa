@@ -1,6 +1,21 @@
 # !/usr/bin/env python
 
 from distutils.core import setup
+
+
+tests_require = [
+    'click',
+    'cookiecutter>=1.4.0',
+    'pytest',
+    'pytest-cookies',
+    'tox',
+]
+
+docs_require = [
+    'Sphinx',
+    'sphinx_rtd_theme',
+]
+
 setup(
     name='cookiecutter-qa',
     packages=[],
@@ -27,4 +42,8 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
     ],
+    extras_require={
+        'docs': docs_require,
+        'tests': tests_require,
+        },
 )

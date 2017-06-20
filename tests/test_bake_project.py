@@ -62,10 +62,13 @@ def run_inside_dir(command, dirpath):
     :param dirpath: String, path of the directory the command is being run.
     """
     with inside_dir(dirpath):
-        with open(os.devnull, 'w') as devnull:
-            return subprocess.check_call(shlex.split(command),
-                                         stdout=devnull,
-                                         stderr=devnull)
+        if os.getenv('TRAVIS'):
+            with open(os.devnull, 'w') as devnull:
+                return subprocess.check_call(shlex.split(command),
+                                             stdout=devnull,
+                                             stderr=devnull)
+        else:
+            return subprocess.check_call(shlex.split(command))
 
 
 def check_output_inside_dir(command, dirpath):
