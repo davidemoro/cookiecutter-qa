@@ -95,3 +95,6 @@ target/
 output/
 python_boilerplate/
 python/
+
+# Vim
+*.swp
