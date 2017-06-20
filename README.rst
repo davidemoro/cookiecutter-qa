@@ -58,6 +58,9 @@ and bake your new QA package providing some information::
 
 As result cookiecutter will create for you a new package.
 
+**Important note**: be aware that the Browserstack access key will be saved in ``project_name/Dockerfile``
+so keep in mind that before distributing your project!
+
 
 How to use it
 =============
