@@ -65,12 +65,12 @@ so keep in mind that before distributing your project!
 Advanced (y)
 ------------
 
-If you respond ``advanced: **y**`` you get an opinionated stack with a hello world test pytest_, Splinter_, BDD and page objects ready.
+If you respond ``advanced: y`` you get an opinionated stack with a hello world test pytest_, Splinter_, BDD and page objects ready.
 
 
 Advanced (n)
 ------------
-If you respond ``advanced: **n**`` you get a basic project with a basic hello world based on Selenium Splinter.
+If you respond ``advanced: n`` you get a basic project with a basic hello world based on Selenium Splinter.
 
 You can see the ``test_basic.py`` contents::
 
