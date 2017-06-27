@@ -1,3 +1,4 @@
+{%- if cookiecutter.advanced  == 'y' %}
 """
 Fixture Diagrams
 ----------------
@@ -98,6 +99,16 @@ def page_mappings():
         :rtype: dict`
     """
     return {{cookiecutter.project_slug}}.config.PAGE_MAPPINGS
+{%- else %}
+import os
+import pytest
+import {{cookiecutter.project_slug}}
+
+
+@pytest.fixture(scope='session')
+def base_url():
+    return "{{cookiecutter.base_url}}"
+{%- endif %}
 
 
 @pytest.fixture(scope="session")
