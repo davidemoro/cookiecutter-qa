@@ -8,6 +8,9 @@ Templated Values
 
 The following appear in various parts of your generated project.
 
+advanced
+    ``n`` if you want a very simple hello world test, ``y`` for an opinionated setup with BDD, page objects
+
 full_name
     Your full name.
 
@@ -26,22 +29,26 @@ project_slug
 project_short_description
     A 1-sentence description of what your Python package does.
 
-release_date
-    The date of the first release.
-
-year
-    The year of the initial package copyright in the license file.
-
 version
     The starting version number of the package.
 
-Options
--------
+create_author_file
+    Creates an author file
 
-The following package configuration options set up different features for your project.
-
-use_pypi_deployment_with_travis
-    Whether to use PyPI deployment with Travis.
+open_source_license
+    Select an open source license or not open source
 
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', "No command-line interface"]
+
+base_url
+    Your base url for your Splinter/Selenium tests
+
+browserstack_username
+    Your Browserstack username
+
+browserstack_access_key
+    Your Browserstack access key (not your password)
+
+testrail
+    Upload test execution results to the Testrail (https://github.com/dubner/pytest-testrail) test management tool. If you don't have Testrail say ``n`` here
