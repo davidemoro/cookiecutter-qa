@@ -13,8 +13,6 @@ Getting Started
    :maxdepth: 2
 
    readme
-   tutorial
-   pypi_release_checklist
 
 Basics
 ------
