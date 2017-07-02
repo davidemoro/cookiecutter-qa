@@ -39,7 +39,7 @@ selenium==3.4.3
 simplejson==3.11.1
 six==1.10.0
 snowballstemmer==1.2.1
-Sphinx==1.6.2
+Sphinx==1.6.3
 sphinx-rtd-theme==0.2.4
 sphinxcontrib-websupport==1.0.1
 splinter==0.7.5
