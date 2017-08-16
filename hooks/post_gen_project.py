@@ -26,15 +26,3 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.testrail }}' == 'n':
         remove_file('testrail.cfg')
-
-    if '{{ cookiecutter.advanced }}' == 'n':
-        remove_folder('{{cookiecutter.project_slug}}', 'pages')
-        remove_folder('{{cookiecutter.project_slug}}', 'features')
-        remove_file('{{cookiecutter.project_slug}}', 'config.py')
-        remove_file('{{cookiecutter.project_slug}}', 'cli.py')
-        remove_file('{{cookiecutter.project_slug}}', 'tests',
-                    'functional', 'test_login.py')
-        remove_file('{{cookiecutter.project_slug}}', 'tests',
-                    'functional', 'test_logout.py')
-        remove_file('{{cookiecutter.project_slug}}', 'tests',
-                    'functional', 'conftest.py')

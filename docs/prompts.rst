@@ -8,9 +8,6 @@ Templated Values
 
 The following appear in various parts of your generated project.
 
-advanced
-    ``n`` if you want a very simple hello world test, ``y`` for an opinionated setup with BDD, page objects
-
 full_name
     Your full name.
 
