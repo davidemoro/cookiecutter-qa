@@ -86,7 +86,7 @@ install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
 docker-build:
-	docker build -t {{cookiecutter.project_slug}} .
+	docker build -t {{cookiecutter.project_slug}} -t {{cookiecutter.project_slug}}:latest --cache-from {{cookiecutter.project_slug}}:latest .
 
 docker-run: docker-build
 	docker run --rm -i {{cookiecutter.project_slug}}
