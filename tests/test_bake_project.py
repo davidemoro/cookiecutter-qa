@@ -162,6 +162,7 @@ def test_bake_and_run_tests(cookies, default_extra_context):
         print("test_bake_and_run_tests path", str(result.project))
 
 
+@pytest.mark.skip(reason='Disabled')
 def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
     """Ensure that an without testrail doesn't break things"""
     extra_context = default_extra_context.copy()
