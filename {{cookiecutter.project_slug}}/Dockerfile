@@ -4,7 +4,6 @@ COPY . /src
 WORKDIR /src
 
 RUN pip3 install --upgrade pip \
-        setuptools \
         tox
 
 ENTRYPOINT [ "tox"]
