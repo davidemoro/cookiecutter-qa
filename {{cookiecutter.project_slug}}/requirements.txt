@@ -49,5 +49,5 @@ typing==3.6.1
 virtualenv==15.1.0
 zope.component==4.4.0
 zope.dottedname==4.2
-zope.event==4.2.0
+zope.event==4.3.0
 zope.interface==4.4.2
