@@ -1,0 +1,5 @@
+{
+    "capabilities": {
+        "browserstack.debug": true
+    }
+}
