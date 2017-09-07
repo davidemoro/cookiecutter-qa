@@ -86,9 +86,11 @@ or::
 
     $ docker run --rm -it project_qa -epy36 -- \
         -vvv --splinter-webdriver=remote \
-        --variables=credentials_tepmlate.yml \
+        --variables=credentials_template.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/WIN10-FIREFOX53.json
+        --variables capabilities/os/WIN10.json
+        --variables capabilities/browsers/chrome/CHROME.json
+        --variables capabilities/resolutions/1280x1024.json
 
 Tox
 ---
@@ -99,7 +101,9 @@ With tox::
     $ tox -epy35 -- -vvv --splinter-webdriver=remote \
         --variables=credentials_template.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/WIN10-FIREFOX53.json
+        --variables capabilities/os/WIN10.json
+        --variables capabilities/browsers/chrome/CHROME.json
+        --variables capabilities/resolutions/1280x1024.json
 
 
 In the next future you will be able to choose a very basic test example or another one with a
