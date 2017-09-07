@@ -95,7 +95,7 @@ Tox
 With tox::
 
     $ pip install tox
-    $ tox -epy35 -- -vvv --splinter-webdriver=remote \
+    $ tox -epy36 -- -vvv --splinter-webdriver=remote \
         --variables=credentials_template.yml \
         --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
         --variables capabilities/os/WIN10.json
