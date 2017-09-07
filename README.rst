@@ -16,9 +16,6 @@ cookiecutter QA
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
        :target: http://cookiecutter-qa.readthedocs.io
 
-.. image:: https://www.browserstack.com/automate/badge.svg?badge_key=cUZrc0xQdENBOTAyNnU0Zy9RZ3oxMUovalh0UTZ6VFpWT2J0RkxkUW5Rcz0tLWpJL2lkcEptbHdmSEN4WEZ0RGZ1dmc9PQ==--0a9b15d748993f1a0079f3256baa9e8348457ca4
-       :target: https://www.browserstack.com/automate/public-build/cUZrc0xQdENBOTAyNnU0Zy9RZ3oxMUovalh0UTZ6VFpWT2J0RkxkUW5Rcz0tLWpJL2lkcEptbHdmSEN4WEZ0RGZ1dmc9PQ==--0a9b15d748993f1a0079f3256baa9e8348457ca4
-
 Coookiecutter QA let you create QA projects based on the Cookiecutter_ scaffolding project.
 
 Usage
