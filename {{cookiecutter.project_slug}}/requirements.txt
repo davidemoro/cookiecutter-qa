@@ -34,7 +34,7 @@ pytest-variables==1.6.1
 pytz==2017.2
 PyYAML==3.12
 requests==2.11.1
-selenium==3.4.3
+selenium==3.5.0
 setuptools==3.6.2.2
 simplejson==3.11.1
 six==1.10.0
