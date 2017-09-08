@@ -1,5 +1,8 @@
 #!/usr/bin/env python
+
 import os
+from shlex import split
+
 try:
     from shlex import quote
 except ImportError:
@@ -16,8 +19,8 @@ def prettify_path(path):
 
 if __name__ == "__main__":
     environment = os.getenv('ENVIRONMENT')
-    markers = quote(os.getenv('MARKERS'))
-    keywords = quote(os.getenv('KEYWORDS'))
+    markers = os.getenv('MARKERS')
+    keywords = os.getenv('KEYWORDS')
     os_version = os.getenv('OS')
     browser = os.getenv('BROWSER')
     parallel_sessions = os.getenv('PARALLEL_SESSIONS')
@@ -41,29 +44,46 @@ if __name__ == "__main__":
     assert os.path.isfile(credentials_file)
 
     pytest_cmd = [
-        'tox',
-        '-epy36',
-        '--',
-        '-vvv',
-        '--variables=capabilities/project.json',
-        '--variables={0}'.format(os_file),
-        '--variables={0}'.format(browser_file),
-        '--variables={0}'.format(resolution_file),
-        '--splinter-webdriver=remote',
-        '--splinter-remote-url={0}'.format(
+        "tox",
+        "-epy36",
+        "--",
+        "-vvv",
+        "--variables",
+        "capabilities/project.json",
+        "--variables",
+        "{0}".format(os_file),
+        "--variables",
+        "{0}".format(browser_file),
+        "--variables",
+        "{0}".format(resolution_file),
+        "--splinter-webdriver",
+        "remote",
+        "--splinter-remote-url",
+        "{0}".format(
             selenium_grid_url),
-        '--variables={0}'.format(credentials_file),
-        '--junitxml={0}'.format(build_id),
+        "--variables",
+        "{0}".format(credentials_file),
+        "--junitxml",
+        "{0}".format(build_id),
     ]
 
     if markers:
-        pytest_cmd.append('-m={0}'.format(markers))
+        pytest_cmd.extend([
+            "-m",
+            quote(markers),
+        ])
 
     if keywords:
-        pytest_cmd.append('-k={0}'.format(keywords))
+        pytest_cmd.extend([
+            "-k",
+            quote(keywords)
+        ])
 
     if os.getenv('DEBUG') == 'true':
-        pytest_cmd.append('--variables=capabilities/debug.json')
+        pytest_cmd.extend([
+            "--variables",
+            "capabilities/debug.json"
+        ])
 
     if os.getenv('TESTRAIL_ENABLE') == 'true':
         if 'pcmw' in environment:
@@ -79,8 +99,10 @@ if __name__ == "__main__":
             prettify_path(browser), markers, keywords))
 
         pytest_cmd.extend([
-            '--testrail={0}'.format(testrail_file),
-            '--tr_name={0}"'.format(tr_name),
+            "--testrail",
+            testrail_file,
+            "--tr_name",
+            tr_name,
         ])
 
     if os.getenv('BLOCK_FIRST_FAILURE') == 'true':
@@ -88,7 +110,10 @@ if __name__ == "__main__":
 
     if parallel_sessions:
         assert isinstance(parallel_sessions, int)
-        pytest_cmd.append('-n {0}'.format(parallel_sessions))
+        pytest_cmd.extend([
+            "-n",
+            parallel_sessions,
+        ])
 
     print(str(pytest_cmd))
-    run(pytest_cmd)
+    run(split(" ".join(pytest_cmd)))
