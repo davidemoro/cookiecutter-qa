@@ -29,7 +29,7 @@ pytest-pypom-navigation==0.0.1
 pytest==3.0.7
 pytest-bdd==2.18.2
 pytest-cov==2.5.1
-pytest-html==1.14.2
+pytest-html==1.15.2
 pytest-metadata==1.5.0
 pytest-splinter==1.8.5
 pytest-testrail==0.0.11
