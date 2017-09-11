@@ -20,7 +20,7 @@ parse==1.8.2
 parse-type==0.3.4
 pbr==3.1.1
 pluggy==0.4.0
-py==1.4.33
+py==1.4.34
 Pygments==2.2.0
 pyparsing==2.2.0
 PyPOM==1.1.1
