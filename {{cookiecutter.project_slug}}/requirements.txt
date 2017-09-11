@@ -8,7 +8,7 @@ coverage==4.4.1
 docutils==0.13.1
 execnet==1.4.1
 funcsigs==1.0.2
-glob2==0.5
+glob2==0.6
 imagesize==0.7.1
 iso8601==0.1.11
 Jinja2==2.9.6
