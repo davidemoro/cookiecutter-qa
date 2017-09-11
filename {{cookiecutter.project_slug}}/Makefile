@@ -89,4 +89,4 @@ docker-build:
 	docker build -t {{cookiecutter.project_slug}} -t {{cookiecutter.project_slug}}:latest --cache-from {{cookiecutter.project_slug}}:latest .
 
 docker-run: docker-build
-	docker run --rm -i {{cookiecutter.project_slug}} -v ~/.cache/pip:/root/.cache/pip
+	docker run --rm -v `eval echo $(echo -n "~$(whoami)")`/.cache/pip:/root/.cache/pip -i {{cookiecutter.project_slug}}
