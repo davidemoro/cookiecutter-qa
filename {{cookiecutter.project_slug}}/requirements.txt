@@ -31,7 +31,7 @@ pytest-bdd==2.18.2
 pytest-cov==2.5.1
 pytest-html==1.14.2
 pytest-metadata==1.5.0
-pytest-splinter==1.8.1
+pytest-splinter==1.8.5
 pytest-testrail==0.0.11
 pytest-travis-fold==1.2.0
 pytest-variables==1.7.0
