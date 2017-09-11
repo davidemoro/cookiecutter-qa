@@ -7,10 +7,8 @@ try:
     from shlex import quote
 except ImportError:
     from pipes import quote
-try:
-    from subprocess import run
-except ImportError:  # py2
-    from subprocess import call as run
+
+from subprocess import check_call
 
 
 def prettify_path(path):
@@ -115,5 +113,4 @@ if __name__ == "__main__":
             parallel_sessions,
         ])
 
-    print(str(pytest_cmd))
-    run(split(" ".join(pytest_cmd)))
+    check_call(split(" ".join(pytest_cmd)))
