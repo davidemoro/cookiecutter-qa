@@ -43,7 +43,7 @@ node('browserstack') {
         // notifyMessage("success")
     }
     catch (exception) {
-        notifyMessage("error")
+        // notifyMessage("error")
         throw exception
     }
 }
