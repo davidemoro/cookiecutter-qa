@@ -30,7 +30,6 @@ node('browserstack') {
             env.OS = params.OS
             env.BROWSER = params.BROWSER
             env.PARALLEL_SESSIONS = params.PARALLEL_SESSIONS
-            env.BUILD_ID = params.BUILD_ID
             env.RESOLUTION = params.RESOLUTION
             env.DEBUG = params.DEBUG
             env.TESTRAIL_ENABLE = params.TESTRAIL_ENABLE
