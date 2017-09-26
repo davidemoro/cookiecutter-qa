@@ -1,5 +1,6 @@
 {
     "capabilities": {
-        "browserstack.debug": true
+        "browserstack.debug": true,
+        "browserstack.networkLogs": true
     }
 }
