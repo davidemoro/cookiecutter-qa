@@ -6,7 +6,7 @@ colander==1.4
 configparser==3.5.0
 coverage==4.4.1
 docutils==0.14
-execnet==1.4.1
+execnet==1.5.0
 funcsigs==1.0.2
 glob2==0.6
 imagesize==0.7.1
