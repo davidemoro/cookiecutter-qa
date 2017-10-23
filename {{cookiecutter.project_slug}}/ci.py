@@ -45,7 +45,7 @@ if __name__ == "__main__":
         "-vvv",
         "--variables",
         "capabilities/project.json",
-        "--variables", 
+        "--variables",
         os_file,
         "--variables",
         browser_file,
