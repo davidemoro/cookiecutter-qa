@@ -1,10 +1,17 @@
 # coding=utf-8
 """Login feature tests."""
 
-import pytest_bdd
+from pytest_bdd import (
+    given,
+    when,
+    then,
+)
+from pytest_bdd.parsers import (
+    parse,
+)
 
 
-@pytest_bdd.given(pytest_bdd.parsers.parse('I am logged in as {user_id}'))
+@given(parse('I am logged in as {user_id}'))
 def username(user_id, navigation):
     """Login and returns username for the given user_id """
     username, password = navigation.get_credentials(user_id)
@@ -15,9 +22,9 @@ def username(user_id, navigation):
 # we need to change step description due to a nasty limitation of pytest-bdd.
 # See https://github.com/pytest-dev/pytest-bdd/issues/199
 
-@pytest_bdd.given(pytest_bdd.parsers.parse(
+@given(parse(
     '[outline] I am on the <page_id> page'))
-@pytest_bdd.given(pytest_bdd.parsers.parse(
+@given(parse(
     'I am on the {page_id} page'))
 def loggedin_page_given_outline(page_id, navigation):
     """Logged in fixture"""
@@ -31,14 +38,14 @@ def _check_page_url(page, page_id):
     assert page.navigation.get_page_url(page_id) in page.current_url
 
 
-@pytest_bdd.when(pytest_bdd.parsers.parse(
+@when(parse(
     'I visit the {page_id} page'))
 def visit_page(navigation, page_id):
     """Visit the page."""
     navigation.visit_page(page_id)
 
 
-@pytest_bdd.when(pytest_bdd.parsers.parse(
+@when(parse(
     'I logout from the application'))
 def check_logout_when(navigation):
     """Check the user logout."""
@@ -46,16 +53,16 @@ def check_logout_when(navigation):
     page.logout()
 
 
-@pytest_bdd.then(pytest_bdd.parsers.parse(
+@then(parse(
     'the page contains text <text>'))
 def page_text_check(navigation, text):
     page = navigation.page
     assert page.has_text(text)
 
 
-@pytest_bdd.then(pytest_bdd.parsers.parse(
+@then(parse(
     'I land on the {page_id} page'))
-@pytest_bdd.then(pytest_bdd.parsers.parse(
+@then(parse(
     'I land on the <page_id> page'))
 def check_page_url_no_follow(navigation,
                              page_id):
