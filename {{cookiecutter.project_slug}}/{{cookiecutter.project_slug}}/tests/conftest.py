@@ -107,9 +107,12 @@ def splinter_screenshot_dir():
 
 
 @pytest.fixture(scope='session')
-def splinter_driver_kwargs(splinter_webdriver, variables):
+def splinter_driver_kwargs(splinter_webdriver, variables, metadata):
     """Webdriver kwargs."""
     capabilities = {}
     if splinter_webdriver == 'remote':
-        capabilities = variables.get('capabilities', {})
+        build = metadata.get('BUILD_TAG', None)
+        if build:
+            capabilities['build'] = build
+        capabilities.update(variables.get('capabilities', {}))
     return capabilities
