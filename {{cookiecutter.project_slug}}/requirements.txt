@@ -38,7 +38,7 @@ pytest-variables==1.7.0
 pytest-xdist==1.20.1
 pytz==2017.3
 PyYAML==3.12
-requests==2.11.1
+requests==2.18.4
 selenium==3.6.0
 simplejson==3.11.1
 six==1.11.0
