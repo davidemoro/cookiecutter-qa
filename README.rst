@@ -47,15 +47,14 @@ and bake your new QA package providing some information::
     2 - No command-line interface
     Choose from 1, 2 [1]: 2
     base_url [https://www.tierratelematics.com]:
-    browserstack_username [USERNAME]: YOUR_BROWSERSTACK_USERNAME_HERE
-    browserstack_access_key [ACCESS_KEY]: YOUR_BROWSERSTACK_ACCESS_KEY_HERE
+    selenium_grid_url [http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub]: YOUR_SELENIUM_GRID_URL_HERE
     testrail [y]:
     $ cd project_qa
 
 As result cookiecutter will create for you a new package with a hello world test pytest_, Splinter_, BDD and page
 objects ready.
 
-**Important note**: be aware that the Browserstack access key will be saved in ``project_name/Dockerfile``
+**Important note**: be aware that the `selenium_grid_url` will be saved in ``project_name/Dockerfile``
 so keep in mind that before distributing your project!
 
 
@@ -68,8 +67,9 @@ run your tests against a real remote browser without having to install locally a
 prerequisites (geckodriver, chromedriver, adjust executable paths, etc).
 
 Once logged in on Browserstack_ visit ``Account > Settings``, copy the Automate's username and access key
-and generate a new cookiecutter project providing username and access key when asked (``browserstack_username``
-and ``browserstack_access_key``)
+and generate a new cookiecutter project providing the remote selenium grid url following the format::
+
+    http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub
 
 Docker
 ------
@@ -84,7 +84,7 @@ or::
     $ docker run --rm -it project_qa -epy36 -- \
         -vvv --splinter-webdriver=remote \
         --variables=credentials_template.yml \
-        --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
         --variables capabilities/os/WIN10.json
         --variables capabilities/browsers/chrome/CHROME.json
         --variables capabilities/resolutions/1280x1024.json
@@ -97,7 +97,7 @@ With tox::
     $ pip install tox
     $ tox -epy36 -- -vvv --splinter-webdriver=remote \
         --variables=credentials_template.yml \
-        --splinter-remote-url=http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
         --variables capabilities/os/WIN10.json
         --variables capabilities/browsers/chrome/CHROME.json
         --variables capabilities/resolutions/1280x1024.json
