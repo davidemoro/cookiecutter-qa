@@ -4,7 +4,7 @@ appdirs==1.4.3
 Babel==2.5.1
 colander==1.4
 configparser==3.5.0
-coverage==4.4.1
+coverage==4.4.2
 docutils==0.14
 execnet==1.5.0
 funcsigs==1.0.2
@@ -27,7 +27,7 @@ PyPOM==1.2.0
 pypom-form==0.3.1
 pytest-pypom-navigation==0.1.1
 pytest==3.2.3
-pytest-bdd==2.18.2
+pytest-bdd==2.19.0
 pytest-cov==2.5.1
 pytest-html==1.16.0
 pytest-metadata==1.5.0
@@ -40,7 +40,7 @@ pytz==2017.3
 PyYAML==3.12
 requests==2.18.4
 selenium==3.7.0
-simplejson==3.11.1
+simplejson==3.12.0
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.6.5

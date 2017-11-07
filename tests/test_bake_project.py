@@ -18,12 +18,16 @@ else:
 BROWSERSTACK_USERNAME = os.getenv('BROWSERSTACK_USERNAME', "davidemoro2")
 BROWSERSTACK_ACCESS_KEY = os.getenv('BROWSERSTACK_ACCESS_KEY', '')
 
+selenium_grid_url = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(
+    BROWSERSTACK_USERNAME,
+    BROWSERSTACK_ACCESS_KEY,
+)
+
 
 @pytest.fixture
 def default_extra_context():
     return {
-        'browserstack_username': BROWSERSTACK_USERNAME,
-        'browserstack_access_key': BROWSERSTACK_ACCESS_KEY
+        'selenium_grid_url': selenium_grid_url,
     }
 
 
@@ -156,8 +160,8 @@ def test_bake_and_run_tests(cookies, default_extra_context):
             extra_context=extra_context) as result:
         assert result.project.isdir()
         run_inside_dir(
-            'make docker-run BROWSERSTACK_ACCESS_KEY={0}'.format(
-                default_extra_context['browserstack_access_key']),
+            'make docker-run SELENIUM_GRID_URL={0}'.format(
+                default_extra_context['selenium_grid_url']),
             str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
 
@@ -169,8 +173,8 @@ def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
         run_inside_dir(
-            'make docker-run BROWSERSTACK_ACCESS_KEY={0}'.format(
-                default_extra_context['browserstack_access_key']),
+            'make docker-run SELENIUM_GRID_URL={0}'.format(
+                default_extra_context['selenium_grid_url']),
             str(result.project)) == 0
 
 

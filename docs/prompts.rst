@@ -41,11 +41,8 @@ command_line_interface
 base_url
     Your base url for your Splinter/Selenium tests
 
-browserstack_username
-    Your Browserstack username
-
-browserstack_access_key
-    Your Browserstack access key (not your password)
+selenium_grid_url
+    Your remote selenium grid url
 
 testrail
     Upload test execution results to the Testrail (https://github.com/dubner/pytest-testrail) test management tool. If you don't have Testrail say ``n`` here

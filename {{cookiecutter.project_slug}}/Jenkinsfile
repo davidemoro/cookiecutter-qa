@@ -9,13 +9,15 @@ properties([parameters([ \
     string(defaultValue: '', description: '', name: 'KEYWORDS'), \
     string(defaultValue: '', description: '', name: 'MARKERS'), \
     booleanParam(defaultValue: false, description: 'Report test execution on Testrail', name: 'TESTRAIL_ENABLE'), \
-    booleanParam(defaultValue: false, description: 'Enable browserstack debug (it might slow down test executions)', name: 'DEBUG'), \
+    booleanParam(defaultValue: false, description: 'Enable debug (it might slow down test executions)', name: 'DEBUG'), \
     booleanParam(defaultValue: false, description: 'Block on first failure', name: 'BLOCK_FIRST_FAILURE'), \
     string(defaultValue: '', description: 'Number of parallel executions. Leave empty if want a sequential test execution or set the desired number of parallelism (eg: 2)', name: 'PARALLEL_SESSIONS'), \
     string(defaultValue: '', description: 'You can specify an alternative selenium grid url', name: 'SELENIUM_GRID_URL') \
 ]), pipelineTriggers([])])
 
-node('browserstack') {
+
+// this requires a Jenkins docker executor tox-py36
+node('tox-py36') {
     // notifyMessage("start");
 
     stage('Checkout') {

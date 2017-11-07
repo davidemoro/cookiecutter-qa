@@ -27,10 +27,7 @@ if __name__ == "__main__":
     parallel_sessions = os.getenv('PARALLEL_SESSIONS')
     junit_output = 'results/{0}.xml'.format(os.getenv('BUILD_ID'))
     grid_url = os.getenv('SELENIUM_GRID_URL', '')
-    fallback_grid_url = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(
-        '{{cookiecutter.browserstack_username}}',
-        '{{cookiecutter.browserstack_access_key}}',
-    )
+    fallback_grid_url = '{{cookiecutter.selenium_grid_url}}'
     selenium_grid_url = grid_url or fallback_grid_url
 
     os_file = 'capabilities/{0}'.format(os_version)
