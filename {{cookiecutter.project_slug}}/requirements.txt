@@ -11,7 +11,7 @@ funcsigs==1.0.2
 glob2==0.6
 imagesize==0.7.1
 iso8601==0.1.12
-Jinja2==2.9.6
+Jinja2==2.10
 Mako==1.0.7
 MarkupSafe==1.0
 mock==2.0.0
