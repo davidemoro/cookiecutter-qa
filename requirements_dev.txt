@@ -19,7 +19,7 @@ pluggy==0.5.2
 poyo==0.4.1
 py==1.5.1
 Pygments==2.2.0
-pytest==3.2.3
+pytest==3.2.5
 pytest-cookies==0.3.0
 python-dateutil==2.6.1
 pytz==2017.3
