@@ -12,7 +12,8 @@ properties([parameters([ \
     booleanParam(defaultValue: false, description: 'Enable debug (it might slow down test executions)', name: 'DEBUG'), \
     booleanParam(defaultValue: false, description: 'Block on first failure', name: 'BLOCK_FIRST_FAILURE'), \
     string(defaultValue: '', description: 'Number of parallel executions. Leave empty if want a sequential test execution or set the desired number of parallelism (eg: 2)', name: 'PARALLEL_SESSIONS'), \
-    string(defaultValue: '', description: 'You can specify an alternative selenium grid url', name: 'SELENIUM_GRID_URL') \
+    string(defaultValue: '', description: 'You can specify an alternative selenium grid url', name: 'SELENIUM_GRID_URL'), \
+    string(defaultValue: '', description: 'Number of test repetitions (for evaluating test robustness or random bugs until it fails)', name: 'COUNT') \
 ]), pipelineTriggers([])])
 
 
@@ -37,6 +38,7 @@ node('tox-py36') {
             env.TESTRAIL_ENABLE = params.TESTRAIL_ENABLE
             env.BLOCK_FIRST_FAILURE = params.BLOCK_FIRST_FAILURE
             env.SELENIUM_GRID_URL = params.SELENIUM_GRID_URL
+            env.COUNT = params.COUNT
 
             sh "./ci.py"
         }

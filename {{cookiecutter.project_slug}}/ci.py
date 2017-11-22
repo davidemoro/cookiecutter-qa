@@ -25,6 +25,7 @@ if __name__ == "__main__":
     os_version = os.getenv('OS')
     browser = os.getenv('BROWSER')
     parallel_sessions = os.getenv('PARALLEL_SESSIONS')
+    count = os.getenv('COUNT')
     junit_output = 'results/{0}.xml'.format(os.getenv('BUILD_ID'))
     grid_url = os.getenv('SELENIUM_GRID_URL', '')
     fallback_grid_url = '{{cookiecutter.selenium_grid_url}}'
@@ -97,6 +98,12 @@ if __name__ == "__main__":
         pytest_cmd.extend([
             "-n",
             parallel_sessions,
+        ])
+
+    if count and count > 0:
+        pytest_cmd.extend([
+            "--count",
+            count,
         ])
 
     pytest_cmd.extend(sys.argv[1:])

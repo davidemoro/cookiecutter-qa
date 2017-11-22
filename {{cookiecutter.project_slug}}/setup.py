@@ -24,6 +24,7 @@ tests_require = [
     'tox',
     'mock',
     'pytest-html',
+    'pytest-repeat',
 ]
 
 docs_require = [
