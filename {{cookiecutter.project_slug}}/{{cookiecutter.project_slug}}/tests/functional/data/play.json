@@ -1,0 +1,11 @@
+{
+    "steps": [
+            {
+                    "type": "assertElementVisible",
+                    "locator": {
+                            "type": "css selector",
+                            "value": "body"
+                    }
+            }
+    ]
+}

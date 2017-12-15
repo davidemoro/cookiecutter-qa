@@ -102,9 +102,15 @@ With tox::
         --variables capabilities/browsers/chrome/CHROME.json
         --variables capabilities/resolutions/1280x1024.json
 
+pytest-play ready!
+==================
 
-In the next future you will be able to choose a very basic test example or another one with a
-more opinionated stack.
+``cookiecutter-qa`` supports also pytest-play_.
+
+If you are not keen on programming or page objects you can run scenarios using
+a **json** format.
+
+See ``test_play.py`` and ``play.json``.
 
 
 Credits
@@ -141,3 +147,4 @@ Sponsored by
 .. _`@davidemoro`: https://twitter.com/davidemoro
 .. _`Splinter`: https://splinter.readthedocs.io/en/latest/
 .. _`pytest`: https://docs.pytest.org/en/latest/
+.. _`pytest-play`: http://pytest-play.readthedocs.io/en/latest/
