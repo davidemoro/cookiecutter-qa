@@ -9,9 +9,9 @@ cookiecutter QA
        :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
        :alt: Updates
 
-.. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/python-3-shield.svg
-       :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
-       :alt: Python 3
+.. .. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/python-3-shield.svg
+         :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
+         :alt: Python 3
 
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
        :target: http://cookiecutter-qa.readthedocs.io
