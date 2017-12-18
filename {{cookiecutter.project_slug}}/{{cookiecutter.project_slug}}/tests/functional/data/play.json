@@ -33,6 +33,16 @@
             },
             {
                     "type": "verifyEval",
+                    "value": "admin",
+                    "script": "'$Administrator_name'"
+            },
+            {
+                    "type": "verifyEval",
+                    "value": "adminpwd",
+                    "script": "'$Administrator_pwd'"
+            },
+            {
+                    "type": "verifyEval",
                     "value": true,
                     "script": "'$skin' === 'skin1'"
             }
