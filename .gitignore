@@ -98,3 +98,12 @@ python/
 
 # Vim
 *.swp
+
+# junit
+junit*.xml
+
+# report
+report.html
+
+# pytest
+screenshots
