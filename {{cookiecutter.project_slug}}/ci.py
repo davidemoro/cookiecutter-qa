@@ -30,6 +30,7 @@ if __name__ == "__main__":
     grid_url = os.getenv('SELENIUM_GRID_URL', '')
     fallback_grid_url = '{{cookiecutter.selenium_grid_url}}'
     selenium_grid_url = grid_url or fallback_grid_url
+    play = os.getenv('PLAY')
 
     os_file = 'capabilities/{0}'.format(os_version)
     browser_file = 'capabilities/{0}'.format(browser)
@@ -58,6 +59,13 @@ if __name__ == "__main__":
         "--junitxml",
         junit_output,
     ]
+
+    if play:
+        with open(
+                os.path.join('ascon_qa', 'tests', 'functional',
+                             'data', 'play.json'),
+                'w') as file_obj:
+            file_obj.write(play)
 
     if markers:
         pytest_cmd.extend([
