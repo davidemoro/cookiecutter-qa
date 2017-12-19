@@ -106,8 +106,14 @@ def test_bake_with_defaults(cookies):
         assert 'setup.py' in found_toplevel_files
         assert 'setup.cfg' in found_toplevel_files
         assert 'tox.ini' in found_toplevel_files
-        assert 'credentials_template.yml' in found_toplevel_files
+        assert 'credentials' in found_toplevel_files
         assert 'testrail.cfg' in found_toplevel_files
+
+        credential_files = [
+            subitem.basename for subitem in
+            [item for item in result.project.visit(
+                'credentials')][0].listdir()]
+        assert 'credentials_template.yml' in credential_files
 
         found_secondlevel_files = [
             subitem.basename for subitem in

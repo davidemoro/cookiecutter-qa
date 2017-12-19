@@ -32,6 +32,6 @@ where ``Administrator`` stands for the user id.
 You have to provide the Administrator ``username`` and ``password``
 providing them in the ``credentials_template.yml``. For example:
 
-.. include:: ../credentials_template.yml
+.. include:: ../credentials/credentials_template.yml
    :literal:
 

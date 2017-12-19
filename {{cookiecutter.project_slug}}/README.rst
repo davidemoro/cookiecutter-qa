@@ -62,9 +62,36 @@ Clone the ``{{cookiecutter.project_slug}}`` package and run::
 How to use it
 =============
 
-Once installed you can launch tests with::
+Docker
+------
 
-    $ tox -epy36 -- --variables credentials_template.yml
+If you want to launch your hello world Selenium based tests against Browserstack_ you can just
+type the following commands (Docker required)::
+
+    $ make docker-run
+
+or::
+
+    $ docker run --rm -it {{cookiecutter.project_slug}} -epy36 -- \
+        -vvv --splinter-webdriver=remote \
+        --variables=credentials/credentials_template.yml \
+        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --variables capabilities/os/WIN10.json
+        --variables capabilities/browsers/chrome/CHROME.json
+        --variables capabilities/resolutions/1280x1024.json
+
+Tox
+---
+
+With tox::
+
+    $ pip install tox
+    $ tox -epy36 -- -vvv --splinter-webdriver=remote \
+        --variables=credentials/credentials_template.yml \
+        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
+        --variables capabilities/os/WIN10.json
+        --variables capabilities/browsers/chrome/CHROME.json
+        --variables capabilities/resolutions/1280x1024.json
 
 With the ``--variables`` parameter you can read user credentials from a YAML file like that::
 
@@ -90,3 +117,4 @@ If you use Travis CI (http://travis-ci.org/) you can encrypt files with sensible
 .. _pytest_bdd: http://pytest-bdd.readthedocs.io
 .. _PyPOM: http://pypom.readthedocs.io
 .. _pypom_form: http://pypom-form.readthedocs.io
+.. _Browserstack: https://www.browserstack.com

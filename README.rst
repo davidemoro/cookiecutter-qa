@@ -83,7 +83,7 @@ or::
 
     $ docker run --rm -it project_qa -epy36 -- \
         -vvv --splinter-webdriver=remote \
-        --variables=credentials_template.yml \
+        --variables=credentials/credentials_template.yml \
         --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
         --variables capabilities/os/WIN10.json
         --variables capabilities/browsers/chrome/CHROME.json
@@ -96,7 +96,7 @@ With tox::
 
     $ pip install tox
     $ tox -epy36 -- -vvv --splinter-webdriver=remote \
-        --variables=credentials_template.yml \
+        --variables=credentials/credentials_template.yml \
         --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
         --variables capabilities/os/WIN10.json
         --variables capabilities/browsers/chrome/CHROME.json
