@@ -15,6 +15,7 @@ from pytest_bdd.parsers import (
 def username(user_id, navigation):
     """Login and returns username for the given user_id """
     username, password = navigation.get_credentials(user_id)
+    navigation.visit_page('LoginPage')
     navigation.page.login(username, password)
     return username
 

@@ -25,7 +25,7 @@ Pygments==2.2.0
 pyparsing==2.2.0
 PyPOM==1.2.0
 pypom-form==0.3.1
-pytest-pypom-navigation==0.1.1
+# pytest-pypom-navigation==0.1.1
 pytest==3.3.1
 pytest-bdd==2.19.0
 pytest-cov==2.5.1
@@ -52,3 +52,4 @@ zope.component==4.4.1
 zope.event==4.3.0
 zope.interface==4.4.3
 -e git+https://github.com/tierratelematics/pytest-play.git@develop#egg=pytest_play
+-e git+https://github.com/tierratelematics/pytest-pypom-navigation.git@develop#egg=pypom_navigation
