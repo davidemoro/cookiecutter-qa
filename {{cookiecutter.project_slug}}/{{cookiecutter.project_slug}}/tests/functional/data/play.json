@@ -1,5 +1,8 @@
 {
     "steps": [
+            {       "type": "get",
+                    "url": "$base_url"
+            },
             {
                     "type": "assertElementVisible",
                     "locator": {
