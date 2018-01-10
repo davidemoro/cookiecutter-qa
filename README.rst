@@ -62,19 +62,22 @@ How to use it
 =============
 
 
-If you want to perform a quick tour create a Browserstack_ free account and you will be able to
+If you want to perform a quick tour create a BrowserStack_ free account and you will be able to
 run your tests against a real remote browser without having to install locally all the needed
 prerequisites (geckodriver, chromedriver, adjust executable paths, etc).
 
-Once logged in on Browserstack_ visit ``Account > Settings``, copy the Automate's username and access key
+Once logged in on BrowserStack_ visit ``Account > Settings``, copy the Automate's username and access key
 and generate a new cookiecutter project providing the remote selenium grid url following the format::
 
     http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub
 
+You can use any Selenium grid provider (SauceLabs_, BrowserStack_, TestingBot_) or using your own local
+grid with Zalenium_.
+
 Docker
 ------
 
-If you want to launch your hello world Selenium based tests against Browserstack_ you can just
+If you want to launch your hello world Selenium based tests against BrowserStack_ you can just
 type the following commands (Docker required)::
 
     $ make docker-run
@@ -106,8 +109,9 @@ With tox::
 Run tests with local browsers
 =============================
 
-You can launch tests based on local browsers instead of relying to a remote or local grid
-using the ``--splinter-webdriver firefox`` option.
+You can launch tests based on local browsers instead of relying to a
+remote (SauceLabs_, BrowserStack_, TestingBot_) or local grid (using Zalenium_)
+using the ``--splinter-webdriver firefox`` option for example.
 
 See https://github.com/pytest-dev/pytest-splinter#command-line-options
 
@@ -164,10 +168,13 @@ Sponsored by
 
 .. _tierra_qa: https://github.com/tierratelematics/tierra_qa
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _Browserstack: https://www.browserstack.com
+.. _BrowserStack: https://www.browserstack.com
 .. _`@audreyr`: https://github.com/audreyr
 .. _`cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 .. _`@davidemoro`: https://twitter.com/davidemoro
 .. _`Splinter`: https://splinter.readthedocs.io/en/latest/
 .. _`pytest`: https://docs.pytest.org/en/latest/
 .. _`pytest-play`: http://pytest-play.readthedocs.io/en/latest/
+.. _`Zalenium`: https://github.com/zalando/zalenium
+.. _`SauceLabs`: https://saucelabs.com/
+.. _`TestingBot`: https://testingbot.com/
