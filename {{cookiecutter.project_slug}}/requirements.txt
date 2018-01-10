@@ -31,7 +31,7 @@ pytest-bdd==2.19.0
 pytest-cov==2.5.1
 pytest-html==1.16.1
 pytest-metadata==1.5.1
-pytest-play==0.3.1
+pytest-play==1.0.0
 pytest-repeat==0.4.1
 pytest-splinter==1.8.5
 pytest-testrail==1.1.0
