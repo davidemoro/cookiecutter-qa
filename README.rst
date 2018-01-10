@@ -102,6 +102,29 @@ With tox::
         --variables capabilities/browsers/chrome/CHROME.json
         --variables capabilities/resolutions/1280x1024.json
 
+
+Run tests with local browsers
+=============================
+
+You can launch tests based on local browsers instead of relying to a remote or local grid
+using the ``--splinter-webdriver firefox`` option.
+
+See https://github.com/pytest-dev/pytest-splinter#command-line-options
+
+Supported browser options:
+
+* firefox
+
+* remote (you need to provide a value for the ``--splinter-remote-url`` option)
+
+* chrome
+
+* phantomjs
+
+Using local browsers it's up to you the configuration of geckodriver, chromedriver,
+executable path settings, using the latest drivers
+(eg: https://github.com/mozilla/geckodriver/releases) and updated browser versions.
+
 pytest-play ready!
 ==================
 
