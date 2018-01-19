@@ -86,7 +86,7 @@ if __name__ == "__main__":
         ])
 
     if os.getenv('TESTRAIL_ENABLE') == 'true':
-        testrail_file = 'conf/testrail/testrail.cfg'
+        testrail_file = 'testrail.cfg'
         assert os.path.isfile(testrail_file)
 
         tr_name = '[{0}][{1}][{2}][{3}][{4}]'.format(
