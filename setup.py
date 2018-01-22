@@ -22,7 +22,7 @@ setup(
     version='0.1.0',
     description='Cookiecutter template for a QA package',
     author='Davide Moro',
-    license='BSD',
+    license='Apache Software License 2.0',
     author_email='davide.moro@gmail.com',
     url='https://github.com/tierratelematics/cookiecutter-qa',
     keywords=['cookiecutter', 'template', 'package', ],
