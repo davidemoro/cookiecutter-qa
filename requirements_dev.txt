@@ -1,9 +1,9 @@
 alabaster==0.7.10
 argh==0.26.2
-arrow==0.12.0
-Babel==2.5.1
+arrow==0.12.1
+Babel==2.5.3
 binaryornot==0.4.4
-certifi==2017.11.5
+certifi==2018.1.18
 chardet==3.0.4
 click==6.7
 cookiecutter==1.6.0
@@ -27,7 +27,7 @@ PyYAML==3.12
 requests==2.18.4
 six==1.11.0
 snowballstemmer==1.2.1
-Sphinx==1.6.5
+Sphinx==1.6.6
 sphinx-rtd-theme==0.2.4
 sphinxcontrib-websupport==1.0.1
 tox==2.9.1
