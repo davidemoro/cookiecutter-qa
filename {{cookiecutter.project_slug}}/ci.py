@@ -94,8 +94,9 @@ if __name__ == "__main__":
 
         pytest_cmd.extend([
             "--testrail",
+            "--tr-config",
             testrail_file,
-            "--tr_name",
+            "--tr-testrun-name",
             tr_name,
         ])
 
