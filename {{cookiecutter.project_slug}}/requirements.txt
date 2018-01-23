@@ -27,7 +27,7 @@ PyPOM==1.2.0
 pypom-form==0.3.1
 pytest-pypom-navigation==2.0.1
 pytest==3.3.1
-pytest-bdd==2.19.0
+pytest-bdd==2.20.0
 pytest-cov==2.5.1
 pytest-html==1.16.1
 pytest-metadata==1.5.1
