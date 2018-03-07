@@ -31,6 +31,8 @@ if __name__ == "__main__":
     fallback_grid_url = '{{cookiecutter.selenium_grid_url}}'
     selenium_grid_url = grid_url or fallback_grid_url
     play = os.getenv('PLAY')
+    random_enable = os.getenv('RANDOM_ENABLE')
+    random_seed = os.getenv('RANDOM_SEED')
 
     os_file = 'capabilities/{0}'.format(os_version)
     browser_file = 'capabilities/{0}'.format(browser)
@@ -85,6 +87,20 @@ if __name__ == "__main__":
         pytest_cmd.extend([
             "--variables",
             "capabilities/debug.json"
+        ])
+
+    if random_enable == 'true':
+        if random_seed:
+            # we use a random seed if specified
+            pytest_cmd.extend([
+                "--randomly-seed",
+                random_seed
+            ])
+    else:
+        # no random, disable pytest-randomly
+        pytest_cmd.extend([
+            "-p",
+            "no:randomly"
         ])
 
     if os.getenv('TESTRAIL_ENABLE') == 'true':

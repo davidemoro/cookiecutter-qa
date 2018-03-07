@@ -14,6 +14,8 @@ properties([parameters([ \
     string(defaultValue: '', description: 'Number of parallel executions. Leave empty if want a sequential test execution or set the desired number of parallelism (eg: 2)', name: 'PARALLEL_SESSIONS'), \
     string(defaultValue: '', description: 'You can specify an alternative selenium grid url', name: 'SELENIUM_GRID_URL'), \
     string(defaultValue: '', description: 'Number of test repetitions (for evaluating test robustness or random bugs until it fails)', name: 'COUNT'), \
+    booleanParam(defaultValue: false, description: 'Random tests execution', name: 'RANDOM_ENABLE'), \
+    string(defaultValue: '', description: 'Random seed', name: 'RANDOM_SEED'), \
     text(defaultValue: '', description: 'Play and execute', name: 'PLAY') \
 ]), pipelineTriggers([])])
 
@@ -40,6 +42,8 @@ node('tox-py36') {
             env.BLOCK_FIRST_FAILURE = params.BLOCK_FIRST_FAILURE
             env.SELENIUM_GRID_URL = params.SELENIUM_GRID_URL
             env.COUNT = params.COUNT
+            env.RANDOM_ENABLE = params.RANDOM_ENABLE
+            env.RANDOM_SEED = params.RANDOM_SEED
             env.PLAY = params.PLAY
 
             sh "./ci.py"

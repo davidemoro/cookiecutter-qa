@@ -25,6 +25,7 @@ tests_require = [
     'mock',
     'pytest-html',
     'pytest-repeat',
+    'pytest-randomly',
 ]
 
 docs_require = [
