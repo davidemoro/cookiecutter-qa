@@ -40,11 +40,29 @@ created in the ``{{cookiecutter.project_slug}}`` package:
 """
 
 import os
+import platform
 
 import pytest
 
 import {{cookiecutter.project_slug}}
 from {{cookiecutter.project_slug}}.config import DEFAULT_PAGES
+
+
+@pytest.fixture(autouse=True)
+def bdd_vars(bdd_vars, variables, skin, data_base_path):
+    """ Inject bdd_vars so they becomes available in play_json """
+    bdd_vars['data_base_path'] = data_base_path
+    return bdd_vars
+
+
+@pytest.fixture
+def data_base_path():
+    """ where pytest-play json files live """
+    here = os.path.abspath(os.path.dirname(__file__))
+    data_path = os.path.join(here, 'data')
+    if 'WIN' in platform.system().upper():
+        data_path = data_path.replace(os.sep, os.sep*2)
+    return data_path
 
 
 @pytest.fixture

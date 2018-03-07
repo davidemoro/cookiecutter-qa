@@ -62,8 +62,10 @@ if __name__ == "__main__":
 
     if play:
         with open(
-                os.path.join('{{cookiecutter.project_slug}}', 'tests', 'functional',
-                             'data', 'play.json'),
+                os.path.join('{{cookiecutter.project_slug}}',
+                             'tests',
+                             'data',
+                             'play.json'),
                 'w') as file_obj:
             file_obj.write(play)
 

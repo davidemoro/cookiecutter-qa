@@ -1,9 +1,7 @@
-import os
 
 
-def test_play(play_json):
+def test_play(play_json, data_base_path):
     data = play_json.get_file_contents(
-        os.path.dirname(__file__),
-        'data',
+        data_base_path,
         'play.json')
     play_json.execute(data)
