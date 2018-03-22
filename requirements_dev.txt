@@ -17,7 +17,7 @@ MarkupSafe==1.0
 pathtools==0.1.2
 pluggy==0.6.0
 poyo==0.4.1
-py==1.5.2
+py==1.5.3
 Pygments==2.2.0
 pytest==3.4.2
 pytest-cookies==0.3.0
