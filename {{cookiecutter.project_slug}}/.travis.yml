@@ -54,13 +54,3 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -e ${TOXENV}
-
-deploy:
-  provider: pypi
-  user: davidemoro
-  password:
-    secure: dohbJBWbRQhxMA0JJfR23EEoVh5n+X5I9Sf6YTwM19eWO/PVIDHRmKGw5PgsEkKK7Xh5QBHSAck3TB/++l2wTh7Plp4twX+IIOo+xLcnKepGJ4yBlxtuO/PDqpYqoDrnwc1V7XWoRFJyzkO/TnZRwSaUzVXp2Z47TFvy6cihtXaW1jD8DvVWfHLHb86uP81J3YczuwWKUVb3r01+ZlTIJnNFCOa3JlRWbY+OpYHyZfJq1ed6K80sbVLZ0tZixTQWbrArvImMapr7Z1H+jb7/Zf+KEdmg+O5GOs0RU+TbNSRT9dGtt7q4GqmzZPY0k1zd18YBO69tx6thSxwudS6R7eWFTnm53KX4SzWuCZtt4YeSyn/aRVZO4EznWkXXhbw1axKqlLaMHzxOwh0zub+wrNBtpuCdFE8177kQOwMAKfz08xgGom8QfYLBQr8e/lFPgasD2lJYN2pe8sg4mhH4z8iY2UicQxjSGOgb8ZXyJAR0iAlY5YTj5iJ9q/vzk68Q/41kb3Si0FWlYNZqV4nJiDNCSEN3NIy3xW2twFvQDHZmjtLdOp/eLX8IGRou3hZm3VfU5wz+zY6+UmRBr6qv9sKma2w44zE11wyvGe7TuyQBe0qXQqW+lqA/wTdNm4zeZWHA/yee7FN+0bUjsUoMfKYtmb5fWg/dqocE+UdB8iY=
-  on:
-    tags: true
-    distributions: sdist bdist_wheel
-repo: davidemoro/{{cookiecutter.project_slug}}
