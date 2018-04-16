@@ -63,4 +63,4 @@ deploy:
   on:
     tags: true
     distributions: sdist bdist_wheel
-repo: tierratelematics/{{cookiecutter.project_slug}}
+repo: davidemoro/{{cookiecutter.project_slug}}

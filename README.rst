@@ -2,15 +2,15 @@
 cookiecutter QA
 ===============
 
-.. image:: https://travis-ci.org/tierratelematics/cookiecutter-qa.svg?branch=master
-       :target: https://travis-ci.org/tierratelematics/cookiecutter-qa
+.. image:: https://travis-ci.org/davidemoro/cookiecutter-qa.svg?branch=master
+       :target: https://travis-ci.org/davidemoro/cookiecutter-qa
 
-.. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/shield.svg
-       :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
+.. image:: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/shield.svg
+       :target: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/
        :alt: Updates
 
-.. .. image:: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/python-3-shield.svg
-         :target: https://pyup.io/repos/github/tierratelematics/cookiecutter-qa/
+.. .. image:: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/python-3-shield.svg
+         :target: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/
          :alt: Python 3
 
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
@@ -25,10 +25,10 @@ Install Cookiecutter_, use ``cookiecutter-qa`` as project template
 and bake your new QA package providing some information::
 
     $ pip install cookiecutter
-    $ cookiecutter https://github.com/tierratelematics/cookiecutter-qa
+    $ cookiecutter https://github.com/davidemoro/cookiecutter-qa
     full_name [Davide Moro]: 
     email [davide.moro@gmail.com]: 
-    github_username [tierratelematics]: 
+    github_username [davidemoro]: 
     project_name [Project QA]: 
     project_slug [project_qa]: 
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
