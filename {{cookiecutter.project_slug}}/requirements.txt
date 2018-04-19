@@ -62,4 +62,4 @@ urllib3==1.22
 zope.component==4.4.1
 zope.dottedname==4.2
 zope.event==4.3.0
-zope.interface==4.4.3
+zope.interface==4.5.0
