@@ -32,6 +32,6 @@ sphinx-rtd-theme==0.3.1
 sphinxcontrib-websupport==1.0.1
 tox==3.0.0
 urllib3==1.22
-virtualenv==15.2.0
+virtualenv==16.0.0
 watchdog==0.8.3          # required by watchmedo
 whichcraft==0.4.1
