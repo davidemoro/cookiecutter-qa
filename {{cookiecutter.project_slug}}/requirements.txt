@@ -34,7 +34,7 @@ pytest==3.6.0
 pytest-bdd==2.21.0
 pytest-cov==2.5.1
 pytest-forked==0.2
-pytest-html==1.18.0
+pytest-html==1.19.0
 pytest-metadata==1.7.0
 pytest-play==1.4.2
 pytest-pypom-navigation==2.0.2
