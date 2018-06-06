@@ -54,7 +54,7 @@ simplejson==3.15.0
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.7.5
-sphinx-rtd-theme==0.3.1
+sphinx-rtd-theme==0.4.0
 sphinxcontrib-websupport==1.0.1
 splinter==0.8.0
 translationstring==1.3
