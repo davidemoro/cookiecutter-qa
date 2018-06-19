@@ -13,7 +13,7 @@ docutils==0.14
 execnet==1.5.0
 funcsigs==1.0.2
 glob2==0.6
-idna==2.6
+idna==2.7
 imagesize==1.0.0
 iso8601==0.1.12
 Jinja2==2.10
