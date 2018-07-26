@@ -22,7 +22,7 @@ Pygments==2.2.0
 pytest==3.6.2
 pytest-cookies==0.3.0
 python-dateutil==2.7.3
-pytz==2018.4
+pytz==2018.5
 PyYAML==4.2b4
 requests==2.19.1
 six==1.11.0
