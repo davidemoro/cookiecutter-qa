@@ -10,7 +10,7 @@ cookiecutter==1.6.0
 docutils==0.14
 future==0.16.0
 idna==2.7
-imagesize==1.0.0
+imagesize==1.1.0
 Jinja2==2.10
 jinja2-time==0.2.0
 MarkupSafe==1.0
