@@ -48,7 +48,7 @@ pytest-xdist==1.23.0
 pytz==2018.5
 PyYAML==4.2b4
 requests==2.19.1
-RestrictedPython==4.0b4
+RestrictedPython==4.0b5
 selenium==3.14.0
 simplejson==3.16.0
 six==1.11.0
