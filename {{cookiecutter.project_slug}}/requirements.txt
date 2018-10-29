@@ -28,7 +28,7 @@ pluggy==0.6.0
 py==1.7.0
 Pygments==2.2.0
 pyparsing==2.2.2
-PyPOM==2.1.0
+PyPOM==2.2.0
 pypom-form==0.3.1
 pytest==3.6.3
 pytest-bdd==2.21.0
