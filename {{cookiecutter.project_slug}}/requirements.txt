@@ -44,7 +44,7 @@ pytest-splinter==1.9.1
 pytest-testrail==2.3.0
 pytest-travis-fold==1.3.0
 pytest-variables==1.7.1
-pytest-xdist==1.23.2
+pytest-xdist==1.24.0
 pytz==2018.7
 PyYAML==4.2b4
 requests==2.20.0
