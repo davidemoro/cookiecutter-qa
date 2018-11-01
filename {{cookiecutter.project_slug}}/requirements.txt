@@ -49,7 +49,7 @@ pytz==2018.7
 PyYAML==4.2b4
 requests==2.20.0
 RestrictedPython==4.0b7
-selenium==3.14.1
+selenium==3.141.0
 simplejson==3.16.0
 six==1.11.0
 snowballstemmer==1.2.1
