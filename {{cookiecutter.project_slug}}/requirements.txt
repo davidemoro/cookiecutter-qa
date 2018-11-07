@@ -31,7 +31,7 @@ pyparsing==2.3.0
 PyPOM==2.2.0
 pypom-form==0.3.1
 pytest==3.6.3
-pytest-bdd==2.21.0
+pytest-bdd==3.0.0
 pytest-cov==2.6.0
 pytest-forked==0.2
 pytest-html==1.19.0

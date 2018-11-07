@@ -65,12 +65,6 @@ def data_base_path():
     return data_path
 
 
-@pytest.fixture
-def pytestbdd_feature_base_dir():
-    """Feature files base directory."""
-    return os.path.join(os.path.dirname({{cookiecutter.project_slug}}.__file__), 'features')
-
-
 @pytest.fixture(scope='session', params=DEFAULT_PAGES.keys())
 def skin(request):
     """ This fixture provides the skin associated with the application
