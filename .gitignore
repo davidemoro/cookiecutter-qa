@@ -107,3 +107,4 @@ report.html
 
 # pytest
 screenshots
+.pytest_cache
