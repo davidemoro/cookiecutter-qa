@@ -24,13 +24,13 @@ packaging==18.0
 parse==1.9.0
 parse-type==0.4.2
 pbr==5.1.1
-pluggy==0.6.0
+pluggy==0.8.0
 py==1.7.0
 Pygments==2.2.0
 pyparsing==2.3.0
 PyPOM==2.2.0
 pypom-form==0.3.1
-pytest==3.6.3
+pytest==3.10.0
 pytest-bdd==3.0.0
 pytest-cov==2.6.0
 pytest-forked==0.2
