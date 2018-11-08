@@ -24,7 +24,7 @@ pytest-cookies==0.3.0
 python-dateutil==2.7.5
 pytz==2018.7
 PyYAML==4.2b4
-requests==2.20.0
+requests==2.20.1
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.8.1
