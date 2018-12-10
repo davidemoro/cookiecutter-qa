@@ -47,7 +47,7 @@ pytest-variables==1.7.1
 pytest-xdist==1.24.1
 pytz==2018.7
 PyYAML==4.2b4
-requests==2.20.1
+requests==2.21.0
 RestrictedPython==4.0b7
 selenium==3.141.0
 simplejson==3.16.0
