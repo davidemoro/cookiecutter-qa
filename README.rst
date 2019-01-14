@@ -135,7 +135,7 @@ pytest-play ready!
 ``cookiecutter-qa`` supports also pytest-play_.
 
 If you are not keen on programming or page objects you can run scenarios using
-a **json** format.
+the **yaml** format.
 
 See ``test_play.py`` and ``play.json``.
 

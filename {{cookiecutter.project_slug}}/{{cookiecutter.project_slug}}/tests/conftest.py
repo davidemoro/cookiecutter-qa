@@ -50,7 +50,8 @@ from {{cookiecutter.project_slug}}.config import DEFAULT_PAGES
 
 @pytest.fixture(autouse=True)
 def bdd_vars(bdd_vars, variables, skin, data_base_path):
-    """ Inject bdd_vars so they becomes available in play_json """
+    """ Inject bdd_vars so they becomes available in play
+        fixture """
     bdd_vars['data_base_path'] = data_base_path
     return bdd_vars
 

@@ -30,13 +30,15 @@ Pygments==2.3.1
 pyparsing==2.3.1
 PyPOM==2.2.0
 pypom-form==0.3.1
-pytest==4.0.2
+#pytest==4.0.2
+pytest<4.0
 pytest-bdd==3.0.1
 pytest-cov==2.6.1
 pytest-forked==1.0.1
 pytest-html==1.20.0
 pytest-metadata==1.8.0
-pytest-play==1.4.2
+# pytest-play==1.4.2
+git+https://github.com/pytest-dev/pytest-play.git@yaml
 pytest-pypom-navigation==2.0.2
 pytest-randomly==1.2.3
 pytest-repeat==0.7.0

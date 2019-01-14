@@ -1,0 +1,30 @@
+---
+- type: get
+  url: "$base_url"
+- type: assertElementVisible
+  locator:
+    type: css
+    value: body
+- type: verifyEval
+  value: 4
+  script: 2+2
+- type: storeEval
+  variable: date1
+  script: Date.now()
+- type: pause
+  waitTime: 500
+- type: storeEval
+  variable: date2
+  script: Date.now()
+- type: verifyEval
+  value: true
+  script: "($date2 - $date1)/1000 >= 0.5"
+- type: verifyEval
+  value: admin
+  script: "'$Administrator_name'"
+- type: verifyEval
+  value: adminpwd
+  script: "'$Administrator_pwd'"
+- type: verifyEval
+  value: true
+  script: "'$skin' === 'skin1'"
