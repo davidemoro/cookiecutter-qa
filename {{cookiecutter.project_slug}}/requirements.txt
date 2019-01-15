@@ -38,7 +38,7 @@ pytest-forked==1.0.1
 pytest-html==1.20.0
 pytest-metadata==1.8.0
 # pytest-play==1.4.2
-git+https://github.com/pytest-dev/pytest-play.git@yaml
+git+https://github.com/pytest-dev/pytest-play.git@features
 pytest-pypom-navigation==2.0.2
 pytest-randomly==1.2.3
 pytest-repeat==0.7.0
