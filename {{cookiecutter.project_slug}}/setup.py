@@ -4,6 +4,7 @@ version = '{{ cookiecutter.version }}dev'
 
 
 install_requires = [
+    'pytest-play>=2.0.0',
     'pytest-pypom-navigation',
     'colander',
     'pytest-variables[yaml]',
