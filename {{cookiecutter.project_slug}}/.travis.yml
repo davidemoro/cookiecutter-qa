@@ -37,7 +37,7 @@ before_install:
   
 install:
   - travis_retry pip install -U pip wheel setuptools
-  - travis_retry pip install -r requirements.txt
+  - travis_retry pip install -r play_requirements.txt
   - travis_retry pip install -r docs_requirements.txt
   - travis_retry pip install -r tests_requirements.txt
   - python setup.py develop

@@ -48,6 +48,7 @@ and bake your new QA package providing some information::
     Choose from 1, 2 [1]: 2
     base_url [https://www.tierratelematics.com]:
     selenium_grid_url [http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub]: YOUR_SELENIUM_GRID_URL_HERE
+    pytest_play [y]:
     testrail [y]:
     $ cd project_qa
 
@@ -137,7 +138,7 @@ pytest-play ready!
 If you are not keen on programming or page objects you can run scenarios using
 the **yaml** format.
 
-See ``test_play.py`` and ``play.json``.
+See ``play.yml``.
 
 
 Credits

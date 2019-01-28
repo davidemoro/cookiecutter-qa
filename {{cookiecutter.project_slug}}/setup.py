@@ -19,6 +19,19 @@ install_requires = [
     {%- endif %}
 ]
 
+{%- if cookiecutter.pytest_play == 'y' %}
+play_require = [
+    'pytest-play',
+    'play_selenium',
+    'play_requests',
+    'play_sql',
+    'play_cassandra',
+    'play_dynamodb',
+    'play_websocket',
+    'play_mqtt',
+]
+{%- endif %}
+
 tests_require = [
     'pycodestyle',
     'pytest-cov',
@@ -87,5 +100,8 @@ setup(name='{{cookiecutter.project_slug}}',
       extras_require={
           'docs': docs_require,
           'tests': tests_require,
+{%- if cookiecutter.pytest_play == 'y' %}
+          'play': play_require,
+{%- endif %}
           },
       )
