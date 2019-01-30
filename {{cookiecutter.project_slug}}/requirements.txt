@@ -24,7 +24,7 @@ packaging==19.0
 parse==1.11.1
 parse-type==0.4.2
 pbr==5.1.2
-pluggy==0.8.0
+pluggy==0.8.1
 py==1.7.0
 Pygments==2.3.1
 pyparsing==2.3.1
