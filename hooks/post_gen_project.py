@@ -14,6 +14,9 @@ def remove_folder(*folderpath):
 
 
 if __name__ == '__main__':
+    # used by third party as good known versions reference
+    remove_file('requirements_functional.txt')
+
     if '{{ cookiecutter.create_author_file }}' != 'y':
         remove_file('AUTHORS.rst')
         remove_file('docs', 'authors.rst')
