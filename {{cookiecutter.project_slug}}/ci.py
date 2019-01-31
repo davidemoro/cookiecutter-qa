@@ -30,7 +30,7 @@ if __name__ == "__main__":
     grid_url = os.getenv('SELENIUM_GRID_URL', '')
     fallback_grid_url = '{{cookiecutter.selenium_grid_url}}'
     selenium_grid_url = grid_url or fallback_grid_url
-    play = os.getenv('PLAY')
+    play = os.getenv('PLAY', None)
     random_enable = os.getenv('RANDOM_ENABLE')
     random_seed = os.getenv('RANDOM_SEED')
 
@@ -66,8 +66,8 @@ if __name__ == "__main__":
         with open(
                 os.path.join('{{cookiecutter.project_slug}}',
                              'tests',
-                             'data',
-                             'play.json'),
+                             'play',
+                             'play.yml'),
                 'w') as file_obj:
             file_obj.write(play)
 

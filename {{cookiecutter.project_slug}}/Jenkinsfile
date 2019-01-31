@@ -15,9 +15,9 @@ properties([parameters([ \
     string(defaultValue: '', description: 'You can specify an alternative selenium grid url', name: 'SELENIUM_GRID_URL'), \
     string(defaultValue: '', description: 'Number of test repetitions (for evaluating test robustness or random bugs until it fails)', name: 'COUNT'), \
     booleanParam(defaultValue: false, description: 'Random tests execution', name: 'RANDOM_ENABLE'), \
-    string(defaultValue: '', description: 'Random seed', name: 'RANDOM_SEED'), \
+    string(defaultValue: '', description: 'Random seed', name: 'RANDOM_SEED'){%- if cookiecutter.pytest_play == 'n' %} \{%- else %}, \
     text(defaultValue: '', description: 'Play and execute', name: 'PLAY') \
-]), pipelineTriggers([])])
+{%- endif %}]), pipelineTriggers([])])
 
 
 // this requires a Jenkins docker executor tox-py36
@@ -44,7 +44,7 @@ node('tox-py36') {
             env.COUNT = params.COUNT
             env.RANDOM_ENABLE = params.RANDOM_ENABLE
             env.RANDOM_SEED = params.RANDOM_SEED
-            env.PLAY = params.PLAY
+            {%- if cookiecutter.pytest_play == 'y' %}env.PLAY = params.PLAY{%- endif %}
 
             sh "./ci.py"
         }
