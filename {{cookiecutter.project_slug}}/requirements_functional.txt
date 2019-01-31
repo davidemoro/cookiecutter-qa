@@ -2,7 +2,7 @@ atomicwrites==1.2.1
 attrs==18.2.0
 certifi==2018.11.29
 chardet==3.0.4
-colander==1.5.1
+colander==1.6.0
 glob2==0.6
 idna==2.8
 iso8601==0.1.12
