@@ -48,6 +48,7 @@ import {{cookiecutter.project_slug}}
 from {{cookiecutter.project_slug}}.config import DEFAULT_PAGES
 
 
+{%- if cookiecutter.pytest_play == 'y' %}
 @pytest.fixture(autouse=True)
 def bdd_vars(bdd_vars, variables, skin, data_base_path):
     """ Inject bdd_vars so they becomes available in play
@@ -64,6 +65,7 @@ def data_base_path():
     if 'WIN' in platform.system().upper():
         data_path = data_path.replace(os.sep, os.sep*2)
     return data_path
+{%- endif %}
 
 
 @pytest.fixture(scope='session', params=DEFAULT_PAGES.keys())

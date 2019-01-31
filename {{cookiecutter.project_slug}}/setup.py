@@ -4,7 +4,6 @@ version = '{{ cookiecutter.version }}dev'
 
 
 install_requires = [
-    'pytest-play>=2.0.0',
     'pytest-pypom-navigation',
     'colander',
     'pytest-variables[yaml]',
@@ -24,11 +23,11 @@ play_require = [
     'pytest-play',
     'play_selenium',
     'play_requests',
-    'play_sql',
-    'play_cassandra',
-    'play_dynamodb',
-    'play_websocket',
-    'play_mqtt',
+    # 'play_sql',
+    # 'play_cassandra',
+    # 'play_dynamodb',
+    # 'play_websocket',
+    # 'play_mqtt',
 ]
 {%- endif %}
 
