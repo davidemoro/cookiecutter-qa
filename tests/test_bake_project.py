@@ -184,6 +184,18 @@ def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
             str(result.project)) == 0
 
 
+def test_bake_with_no_play_and_run_tests(cookies, default_extra_context):
+    """Ensure that an without testrail doesn't break things"""
+    extra_context = default_extra_context.copy()
+    extra_context['pytest_play'] = "n"
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        assert result.project.isdir()
+        run_inside_dir(
+            'make docker-run SELENIUM_GRID_URL={0}'.format(
+                default_extra_context['selenium_grid_url']),
+            str(result.project)) == 0
+
+
 def test_bake_without_author_file(cookies):
     with bake_in_temp_dir(cookies,
                           extra_context={'create_author_file': 'n'}) as result:

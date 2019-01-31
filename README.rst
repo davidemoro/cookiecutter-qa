@@ -133,7 +133,9 @@ executable path settings, using the latest drivers
 pytest-play ready!
 ==================
 
-``cookiecutter-qa`` supports also pytest-play_.
+``cookiecutter-qa`` supports also pytest-play_ including by default the external plugins
+play_selenium_ and play_requests_. If you need more ``pytest-play`` plugins
+add what you need in ``setup.py`` (see `Third party pytest-play plugins`_).
 
 If you are not keen on programming or page objects you can run scenarios using
 the **yaml** format.
@@ -167,7 +169,6 @@ Sponsored by
      :target: https://www.browserstack.com
      :alt: Browserstack
 
-.. _tierra_qa: https://github.com/tierratelematics/tierra_qa
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _BrowserStack: https://www.browserstack.com
 .. _`@audreyr`: https://github.com/audreyr
@@ -176,6 +177,9 @@ Sponsored by
 .. _`Splinter`: https://splinter.readthedocs.io/en/latest/
 .. _`pytest`: https://docs.pytest.org/en/latest/
 .. _`pytest-play`: http://pytest-play.readthedocs.io/en/latest/
+.. _`play_selenium`: https://github.com/davidemoro/play_selenium
+.. _`play_requests`: https://github.com/davidemoro/play_request
+.. _`Third party pytest-play plugins`: https://github.com/pytest-dev/pytest-play#third-party-pytest-play-plugins
 .. _`Zalenium`: https://github.com/zalando/zalenium
 .. _`SauceLabs`: https://saucelabs.com/
 .. _`TestingBot`: https://testingbot.com/
