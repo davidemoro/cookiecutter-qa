@@ -2,7 +2,7 @@
 -r requirements_play.txt
 {%- endif %}
 alabaster==0.7.12
-atomicwrites==1.2.1
+atomicwrites==1.3.0
 attrs==18.2.0
 Babel==2.6.0
 certifi==2018.11.29
