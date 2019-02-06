@@ -1,3 +1,3 @@
 play-requests==0.0.4
 play-selenium==0.0.1
-pytest-play==2.0.1
+pytest-play==2.0.2
