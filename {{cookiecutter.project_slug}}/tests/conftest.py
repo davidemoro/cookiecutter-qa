@@ -44,8 +44,7 @@ import platform
 
 import pytest
 
-import {{cookiecutter.project_slug}}
-from {{cookiecutter.project_slug}}.config import DEFAULT_PAGES
+from ..config import DEFAULT_PAGES
 
 
 {%- if cookiecutter.pytest_play == 'y' %}
@@ -107,18 +106,18 @@ def page_mappings():
         * optional page object class (otherwise the default implementation
           will be used as fallback provided by :py:func:`default_page_class`)
 
-        See :py:mod:`{{cookiecutter.project_slug}}.config` for further details.
+        See :py:mod:`.config` for further details.
 
         :return: dictionary with all known pages
         :rtype: dict`
     """
-    return {{cookiecutter.project_slug}}.config.PAGE_MAPPINGS
+    return ..config.PAGE_MAPPINGS
 
 
 @pytest.fixture(scope="session")
 def splinter_screenshot_dir():
     """Feature files base directory."""
-    return os.path.join(os.path.dirname({{cookiecutter.project_slug}}.__file__), 'screenshots')
+    return os.path.join(os.path.dirname(__file__), 'screenshots')  # TODO: parent
 
 
 @pytest.fixture(scope='session')
