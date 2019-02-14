@@ -111,7 +111,8 @@ def page_mappings():
         :return: dictionary with all known pages
         :rtype: dict`
     """
-    return ..config.PAGE_MAPPINGS
+    from ..config import PAGE_MAPPINGS
+    return PAGE_MAPPINGS
 
 
 @pytest.fixture(scope="session")
