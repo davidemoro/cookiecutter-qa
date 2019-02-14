@@ -33,7 +33,6 @@ and bake your new QA package providing some information::
     project_slug [project_qa]: 
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
     version [0.0.1]: 
-    create_author_file [y]: 
     Select command_line_interface:
     1 - Click
     2 - No command-line interface

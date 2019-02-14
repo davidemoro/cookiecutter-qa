@@ -188,20 +188,6 @@ def test_bake_with_no_play_and_run_tests(cookies, default_extra_context):
             str(result.project)) == 0
 
 
-def test_bake_without_author_file(cookies):
-    with bake_in_temp_dir(cookies,
-                          extra_context={'create_author_file': 'n'}) as result:
-        found_toplevel_files = [f.basename for f in result.project.listdir()]
-        assert 'AUTHORS.rst' not in found_toplevel_files
-        doc_files = [f.basename for f in result.project.join('docs').listdir()]
-        assert 'authors.rst' not in doc_files
-
-        # Check that
-        manifest_path = result.project.join('MANIFEST.in')
-        with open(str(manifest_path)) as manifest_file:
-            assert 'AUTHORS.rst' not in manifest_file.read()
-
-
 def test_make_help(cookies):
     with bake_in_temp_dir(cookies) as result:
         output = check_output_inside_dir('make help', str(result.project))

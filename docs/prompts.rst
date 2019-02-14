@@ -29,9 +29,6 @@ project_short_description
 version
     The starting version number of the package.
 
-create_author_file
-    Creates an author file
-
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', "No command-line interface"]
 
