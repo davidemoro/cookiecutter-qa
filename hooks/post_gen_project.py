@@ -18,10 +18,10 @@ if __name__ == '__main__':
     remove_file('requirements_functional.txt')
 
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
-        remove_file('cli.py')
+        remove_file('{{ cookiecutter.project_slug }}', 'cli.py')
 
     if '{{ cookiecutter.testrail }}' == 'n':
         remove_file('testrail.cfg')
 
     if '{{ cookiecutter.pytest_play }}' == 'n':
-        remove_folder('tests', 'play')
+        remove_folder('{{cookiecutter.project_slug}}', 'tests', 'play')
