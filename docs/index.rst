@@ -28,8 +28,6 @@ Advanced Features
 .. toctree::
    :maxdepth: 2
 
-   console_script_setup
-
 
 Indices and tables
 ==================

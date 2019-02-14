@@ -17,9 +17,6 @@ if __name__ == '__main__':
     # used by third party as good known versions reference
     remove_file('requirements_functional.txt')
 
-    if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
-        remove_file('{{ cookiecutter.project_slug }}', 'cli.py')
-
     if '{{ cookiecutter.testrail }}' == 'n':
         remove_file('testrail.cfg')
 

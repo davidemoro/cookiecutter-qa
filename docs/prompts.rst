@@ -23,9 +23,6 @@ project_short_description
 version
     The starting version number of the package.
 
-command_line_interface
-    Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', "No command-line interface"]
-
 base_url
     Your base url for your Splinter/Selenium tests
 
