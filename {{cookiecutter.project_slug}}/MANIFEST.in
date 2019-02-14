@@ -1,8 +1,0 @@
-include *.md
-include *.ini
-include *.txt
-include *.rst
-include *.yml
-include *.json
-recursive-include docs *.txt
-recursive-include {{cookiecutter.project_slug}} *.feature
