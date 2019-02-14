@@ -21,7 +21,7 @@ properties([parameters([ \
 
 
 // this requires a Jenkins docker executor tox-py36
-node('tox-py36') {
+node('pytest-play') {
     // notifyMessage("start");
 
     stage('Checkout') {

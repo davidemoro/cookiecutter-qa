@@ -40,9 +40,7 @@ if __name__ == "__main__":
     credentials_file = 'credentials/credentials-{0}.yml'.format(environment)
 
     pytest_cmd = [
-        "tox",
-        "-epy36",
-        "--",
+        "pytest",
         "-vvv",
         "--variables",
         "capabilities/project.json",
