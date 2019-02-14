@@ -2,6 +2,23 @@
 {{cookiecutter.project_slug}}
 =========
 
+.. image:: https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}.svg?branch=master
+       :target: https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}
+
+.. image:: https://requires.io/github/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/requirements.svg?branch=master
+       :target: https://requires.io/github/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/requirements/?branch=master
+
+.. image:: https://readthedocs.org/projects/{{cookiecutter.project_slug}}/badge/?version=latest
+       :target: http://{{cookiecutter.project_slug}}.readthedocs.io
+
+.. image:: https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg
+       :target: https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}
+
+.. image:: https://api.codacy.com/project/badge/Grade/0698c7aa2e164ee996518737aad7d6f4
+       :target: https://www.codacy.com/app/davide-moro/{{cookiecutter.project_slug}}?utm_source=github.com&amp;utm_medium=referral&amp;utm_content={{cookiecutter.github_username}}/{{cookiecutter.project_slug}}&amp;utm_campaign=Badge_Grade
+
+
+
 ``{{cookiecutter.project_slug}}`` is a package that aims to find a new repeatable pattern for 
 QA testing applied to any web application.
 
