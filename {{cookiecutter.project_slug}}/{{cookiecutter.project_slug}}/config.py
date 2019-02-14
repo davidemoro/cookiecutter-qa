@@ -3,7 +3,7 @@ Page mappings config
 --------------------
 Here you can define all your page mappings with path and optionally a
 class_page if you want your specific page object implementation.
-By default the :py:class:`.pages.BasePage` will be instanciated.
+By default the :py:class:`{{cookiecutter.project_slug}}.pages.BasePage` will be instanciated.
 
 For example you could configure your own page object implementations:
 
@@ -30,7 +30,7 @@ page or whatever you want.
 # Here we define the fallback page object classes if you don't specify
 # in PAGE_MAPPINGS any class
 DEFAULT_PAGES = {
-    'skin1': '.pages.BasePage',
+    'skin1': '{{cookiecutter.project_slug}}.pages.BasePage',
 }
 
 
