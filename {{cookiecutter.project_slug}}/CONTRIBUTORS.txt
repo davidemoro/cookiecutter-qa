@@ -1,6 +1,0 @@
-Contributors
-============
-
-* `Full contributors list`_
-
-.. _Full contributors list: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/graphs/contributors

@@ -14,9 +14,6 @@ full_name
 email
     Your email address.
 
-github_username
-    Your GitHub username.
-
 project_name
     The name of your new Python package project. This is used in documentation, so spaces and any characters are fine here.
     
