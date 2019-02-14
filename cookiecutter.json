@@ -7,7 +7,6 @@
   "project_short_description": "Project QA contains all the boilerplate you need to create a QA package",
   "version": "0.0.1",
   "create_author_file": "y",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
   "command_line_interface": ["Click", "No command-line interface"],
   "base_url": "https://www.tierratelematics.com",
   "selenium_grid_url": "http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub",

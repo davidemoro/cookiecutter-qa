@@ -34,14 +34,6 @@ and bake your new QA package providing some information::
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
     version [0.0.1]: 
     create_author_file [y]: 
-    Select open_source_license:
-    1 - MIT license
-    2 - BSD license
-    3 - ISC license
-    4 - Apache Software License 2.0
-    5 - GNU General Public License v3
-    6 - Not open source
-    Choose from 1, 2, 3, 4, 5, 6 [1]: 4
     Select command_line_interface:
     1 - Click
     2 - No command-line interface

@@ -32,9 +32,6 @@ version
 create_author_file
     Creates an author file
 
-open_source_license
-    Select an open source license or not open source
-
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', "No command-line interface"]
 

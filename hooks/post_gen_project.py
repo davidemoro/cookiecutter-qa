@@ -24,9 +24,6 @@ if __name__ == '__main__':
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
         remove_file('{{ cookiecutter.project_slug }}', 'cli.py')
 
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        remove_file('LICENSE')
-
     if '{{ cookiecutter.testrail }}' == 'n':
         remove_file('testrail.cfg')
 
