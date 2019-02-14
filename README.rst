@@ -26,7 +26,6 @@ and bake your new QA package providing some information::
 
     $ pip install cookiecutter
     $ cookiecutter https://github.com/davidemoro/cookiecutter-qa
-    full_name [Davide Moro]: 
     email [davide.moro@gmail.com]: 
     github_username [davidemoro]: 
     project_name [Project QA]: 

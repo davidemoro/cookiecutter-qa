@@ -1,7 +1,5 @@
 {
-  "full_name": "Davide Moro",
   "email": "davide.moro@gmail.com",
-  "github_username": "davidemoro",
   "project_name": "Project QA",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Project QA contains all the boilerplate you need to create a QA package",
