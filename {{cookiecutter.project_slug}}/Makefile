@@ -52,6 +52,7 @@ lint: ## check style with flake8
 
 test: ## run tests quickly with the default Python
 	py.test
+	docker run -it --rm -v $(pwd):/src davidemoro/pytest-play --pdb -x --variables credentials/credentials_template.yml --splinter-webdriver remote --splinter-remote-url {{ cookiecutter.selenium_grid_url }} --variables credentials/credentials_template.yml
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -84,9 +85,3 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
-
-docker-build:
-	docker build -t {{cookiecutter.project_slug}} -t {{cookiecutter.project_slug}}:latest --cache-from {{cookiecutter.project_slug}}:latest .
-
-docker-run: docker-build
-	docker run --rm -v `eval echo $(echo -n "~$(whoami)")`/.cache/pip:/root/.cache/pip -i {{cookiecutter.project_slug}}

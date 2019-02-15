@@ -20,11 +20,11 @@ play_require = [
     'pytest-play',
     'play_selenium',
     'play_requests',
-    # 'play_sql',
-    # 'play_cassandra',
-    # 'play_dynamodb',
-    # 'play_websocket',
-    # 'play_mqtt',
+    'play_sql',
+    'play_cassandra',
+    'play_dynamodb',
+    'play_websocket',
+    'play_mqtt',
 ]
 {%- endif %}
 
@@ -37,11 +37,6 @@ tests_require = [
     'pytest-repeat',
     'pytest-randomly',
 ]
-
-docs_require = [
-    'Sphinx',
-    'sphinx_rtd_theme',
-    ]
 
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
@@ -78,7 +73,6 @@ setup(name='{{cookiecutter.project_slug}}',
       # -*- Entry points: -*-
       """,
       extras_require={
-          'docs': docs_require,
           'tests': tests_require,
 {%- if cookiecutter.pytest_play == 'y' %}
           'play': play_require,
