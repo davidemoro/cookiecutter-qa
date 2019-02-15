@@ -9,10 +9,6 @@ cookiecutter QA
        :target: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/
        :alt: Updates
 
-.. .. image:: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/python-3-shield.svg
-         :target: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/
-         :alt: Python 3
-
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
        :target: http://cookiecutter-qa.readthedocs.io
 
@@ -44,9 +40,21 @@ BDD and page objects ready.
 
 And now you can launch your helo world project test (linux)::
 
-    docker run --rm -it -v $(pwd):/src davidemoro/pytest-play
+    $ docker run --rm -it -v $(pwd):/src davidemoro/pytest-play
 
 or you are using Windows substitute the `$(pwd)` command with your project full path.
+
+You can also use custom options provided by pytest and other installed third party plugins
+or request for custom browser capabilities. For example::
+
+    $ docker run --rm -it -v $(pwd):/src davidemoro/pytest-play \
+        --variables capabilities/os/WIN10.json
+        --variables capabilities/browsers/chrome/CHROME.json
+        --variables capabilities/resolutions/1280x1024.json
+        -x
+        --pdb
+
+Local browsers testing is supported too (covered in next sections).
 
 Setup
 =====
@@ -55,12 +63,13 @@ Prerequisites:
 
 * python >= 3.6, needed for the scaffolding tool
 
-* cookiecutter scaffolding tool for generating your project (`pip install cookiecutter` command)
+* cookiecutter scaffolding tool for generating your project (``pip install cookiecutter`` command)
 
 * docker, suggested method for executing your tests using the well
-  tested https://github.com/davidemoro/pytest-play-docker container
+  tested https://github.com/davidemoro/pytest-play-docker container.
+  Using docker is the easiest and faster solution for running your tests
 
-* a selenium grid url or `geckodriver`/`chromedriver` installed
+* a selenium grid url or ``geckodriver``/``chromedriver`` installed
 
 Browsers setup and selenium_grid_url
 ------------------------------------
@@ -78,21 +87,8 @@ and generate a new cookiecutter project providing the remote selenium grid url f
 You can use any Selenium grid provider (SauceLabs_, BrowserStack_, TestingBot_) or using your own local
 grid with Zalenium_.
 
-Otherwise local browsers testing is supported too thanks to the option::
-
-    --splinter-webdriver firefox|chrome
-
-but you have to install correctly the browser drivers.
-
-or::
-
-    $ docker run --rm -it project_qa -epy36 -- \
-        -vvv --splinter-webdriver=remote \
-        --variables=credentials/credentials_template.yml \
-        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/os/WIN10.json
-        --variables capabilities/browsers/chrome/CHROME.json
-        --variables capabilities/resolutions/1280x1024.json
+Otherwise local browsers testing is supported too thanks to the option ``splinter-webdriver``, read the
+following section. 
 
 Run tests with local browsers
 =============================
@@ -118,15 +114,9 @@ executable path settings, using the latest drivers
 pytest-play ready!
 ==================
 
-``cookiecutter-qa`` supports also pytest-play_ including by default the external plugins
-play_selenium_ and play_requests_. If you need more ``pytest-play`` plugins
-add what you need in ``setup.py`` (see `Third party pytest-play plugins`_).
-
-If you are not keen on programming or page objects you can run scenarios using
-the **yaml** format.
-
-See ``play.yml``.
-
+``cookiecutter-qa`` supports also pytest-play_ including by default all the third
+party external plugins like play_selenium_, play_requests_ and their brothers
+(see `Third party pytest-play plugins`_) so you can execute plain **yaml** files.
 
 Credits
 =======
