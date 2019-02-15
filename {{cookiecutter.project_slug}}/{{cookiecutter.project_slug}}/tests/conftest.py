@@ -9,7 +9,6 @@ created in the ``{{cookiecutter.project_slug}}`` package:
 
    digraph {
       credentials_mapping;
-      skin;
       base_url;
       page_mappings,
       default_page_class;
@@ -17,14 +16,9 @@ created in the ``{{cookiecutter.project_slug}}`` package:
       page_instance;
       navigation;
       navigation_class;
-      skip_by_skin_names;
       variables [color="grey"];
-      request [color="grey"];
       browser [color="grey"];
-      skin -> {credentials_mapping base_url default_page_class navigation
-               skip_by_skin_names};
       variables -> {credentials_mapping base_url} [color="grey"];
-      request -> {skin skip_by_skin_names} [color="grey"];
       page_mappings -> {default_page_class base_page navigation}
       base_url -> {base_page navigation};
       browser -> {base_page} [color="grey"];
@@ -46,9 +40,9 @@ import pytest
 
 import {{cookiecutter.project_slug}}
 from {{cookiecutter.project_slug}}.config import DEFAULT_PAGES
-
-
 {%- if cookiecutter.pytest_play == 'y' %}
+
+
 @pytest.fixture(autouse=True)
 def bdd_vars(bdd_vars, variables, skin, data_base_path):
     """ Inject bdd_vars so they becomes available in play
@@ -66,14 +60,6 @@ def data_base_path():
         data_path = data_path.replace(os.sep, os.sep*2)
     return data_path
 {%- endif %}
-
-
-@pytest.fixture(scope='session', params=DEFAULT_PAGES.keys())
-def skin(request):
-    """ This fixture provides the skin associated with the application
-        on which starts the test session.
-    """
-    return request.param
 
 
 @pytest.fixture(scope="session")
