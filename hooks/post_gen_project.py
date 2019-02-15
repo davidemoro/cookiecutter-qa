@@ -14,9 +14,6 @@ def remove_folder(*folderpath):
 
 
 if __name__ == '__main__':
-    # used by third party as good known versions reference
-    remove_file('requirements_functional.txt')
-
     if '{{ cookiecutter.testrail }}' == 'n':
         remove_file('testrail.cfg')
 

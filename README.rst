@@ -27,35 +27,48 @@ and bake your new QA package providing some information::
     $ pip install cookiecutter
     $ cookiecutter https://github.com/davidemoro/cookiecutter-qa
     email [davide.moro@gmail.com]: 
-    github_username [davidemoro]: 
     project_name [Project QA]: 
     project_slug [project_qa]: 
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
     version [0.0.1]: 
-    Select command_line_interface:
-    1 - Click
-    2 - No command-line interface
-    Choose from 1, 2 [1]: 2
     base_url [https://www.tierratelematics.com]:
     selenium_grid_url [http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub]: YOUR_SELENIUM_GRID_URL_HERE
     pytest_play [y]:
     testrail [y]:
     $ cd project_qa
 
-As result cookiecutter will create for you a new package with a hello world test pytest_, Splinter_, BDD and page
-objects ready.
+As result cookiecutter will create for you a new package with a hello world test pytest_, Splinter_, pytest-play_,
+BDD and page objects ready.
 
-**Important note**: be aware that the `selenium_grid_url` will be saved in ``project_name/Dockerfile``
-so keep in mind that before distributing your project!
+**Important note**: be aware that the `selenium_grid_url` will be saved in ``project_name/pytest.ini``!
 
+And now you can launch your helo world project test (linux)::
 
-How to use it
-=============
+    docker run --rm -it -v $(pwd):/src davidemoro/pytest-play
 
+or you are using Windows substitute the `$(pwd)` command with your project full path.
 
-If you want to perform a quick tour create a BrowserStack_ free account and you will be able to
+Setup
+=====
+
+Prerequisites:
+
+* python >= 3.6, needed for the scaffolding tool
+
+* cookiecutter scaffolding tool for generating your project (`pip install cookiecutter` command)
+
+* docker, suggested method for executing your tests using the well
+  tested https://github.com/davidemoro/pytest-play-docker container
+
+* a selenium grid url or `geckodriver`/`chromedriver` installed
+
+Browsers setup and selenium_grid_url
+------------------------------------
+
+If you are not yet comfortable with `geckodriver`/`chromedriver` installations, `PATH` environment variable
+update I suggest to start creating a BrowserStack_ free account and you will be able to
 run your tests against a real remote browser without having to install locally all the needed
-prerequisites (geckodriver, chromedriver, adjust executable paths, etc).
+prerequisites.
 
 Once logged in on BrowserStack_ visit ``Account > Settings``, copy the Automate's username and access key
 and generate a new cookiecutter project providing the remote selenium grid url following the format::
@@ -65,13 +78,11 @@ and generate a new cookiecutter project providing the remote selenium grid url f
 You can use any Selenium grid provider (SauceLabs_, BrowserStack_, TestingBot_) or using your own local
 grid with Zalenium_.
 
-Docker
-------
+Otherwise local browsers testing is supported too thanks to the option::
 
-If you want to launch your hello world Selenium based tests against BrowserStack_ you can just
-type the following commands (Docker required)::
+    --splinter-webdriver firefox|chrome
 
-    $ make docker-run
+but you have to install correctly the browser drivers.
 
 or::
 
@@ -82,20 +93,6 @@ or::
         --variables capabilities/os/WIN10.json
         --variables capabilities/browsers/chrome/CHROME.json
         --variables capabilities/resolutions/1280x1024.json
-
-Tox
----
-
-With tox::
-
-    $ pip install tox
-    $ tox -epy36 -- -vvv --splinter-webdriver=remote \
-        --variables=credentials/credentials_template.yml \
-        --splinter-remote-url=http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub \
-        --variables capabilities/os/WIN10.json
-        --variables capabilities/browsers/chrome/CHROME.json
-        --variables capabilities/resolutions/1280x1024.json
-
 
 Run tests with local browsers
 =============================
@@ -113,8 +110,6 @@ Supported browser options:
 * remote (you need to provide a value for the ``--splinter-remote-url`` option)
 
 * chrome
-
-* phantomjs
 
 Using local browsers it's up to you the configuration of geckodriver, chromedriver,
 executable path settings, using the latest drivers
