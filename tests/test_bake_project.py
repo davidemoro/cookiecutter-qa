@@ -157,11 +157,14 @@ def test_bake_and_run_tests(cookies, default_extra_context):
             cookies,
             extra_context=extra_context) as result:
         assert result.project.isdir()
+        project_path = str(result.project)
         run_inside_dir(
-            'make docker-run SELENIUM_GRID_URL={0}'.format(
+            'docker run --rm -i -v {0}:/src davidemoro/pytest-play '
+            '--splinter-remote-url={1}'.format(
+                project_path,
                 default_extra_context['selenium_grid_url']),
             str(result.project)) == 0
-        print("test_bake_and_run_tests path", str(result.project))
+        print("test_bake_and_run_tests path", project_path)
 
 
 def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
@@ -170,8 +173,11 @@ def test_bake_with_no_testrail_and_run_tests(cookies, default_extra_context):
     extra_context['testrail'] = "n"
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
+        project_path = str(result.project)
         run_inside_dir(
-            'make docker-run SELENIUM_GRID_URL={0}'.format(
+            'docker run --rm -i -v {0}:/src davidemoro/pytest-play '
+            '--splinter-remote-url={1}'.format(
+                project_path,
                 default_extra_context['selenium_grid_url']),
             str(result.project)) == 0
 
@@ -182,16 +188,13 @@ def test_bake_with_no_play_and_run_tests(cookies, default_extra_context):
     extra_context['pytest_play'] = "n"
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
+        project_path = str(result.project)
         run_inside_dir(
-            'make docker-run SELENIUM_GRID_URL={0}'.format(
+            'docker run --rm -i -v {0}:/src davidemoro/pytest-play '
+            '--splinter-remote-url={1}'.format(
+                project_path,
                 default_extra_context['selenium_grid_url']),
             str(result.project)) == 0
-
-
-def test_make_help(cookies):
-    with bake_in_temp_dir(cookies) as result:
-        output = check_output_inside_dir('make help', str(result.project))
-        assert b"check code coverage quickly with the default Python" in output
 
 
 def test_bake_with_no_console_script(cookies):
