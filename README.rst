@@ -27,7 +27,7 @@ and bake your new QA package providing some information::
     project_slug [project_qa]: 
     project_short_description [Project QA contains all the boilerplate you need to create a QA package]: 
     version [0.0.1]: 
-    base_url [https://www.tierratelematics.com]:
+    base_url [https://github.com/davidemoro/cookiecutter-qa]:
     selenium_grid_url [http://USERNAME:ACCESS_KEY@hub.browserstack.com:80/wd/hub]: YOUR_SELENIUM_GRID_URL_HERE
     pytest_play [y]:
     testrail [y]:
