@@ -11,4 +11,4 @@ install:
 - travis_retry pip install -U tox
 - TOX_ENV=${TRAVIS_PYTHON_VERSION/[0-9].[0-9]/py${TRAVIS_PYTHON_VERSION/.}}
 script:
-- travis_wait 25 tox -e $TOX_ENV
+- travis_wait 25 sudo tox -e $TOX_ENV
