@@ -8,8 +8,9 @@ from cookiecutter.utils import rmtree
 
 BROWSERSTACK_USERNAME = os.getenv('BROWSERSTACK_USERNAME', "davidemoro2")
 BROWSERSTACK_ACCESS_KEY = os.getenv('BROWSERSTACK_ACCESS_KEY', '')
+REMOTE_URL = os.getenv('REMOTE_URL', '')
 
-selenium_grid_url = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(
+selenium_grid_url = REMOTE_URL or 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(
     BROWSERSTACK_USERNAME,
     BROWSERSTACK_ACCESS_KEY,
 )
