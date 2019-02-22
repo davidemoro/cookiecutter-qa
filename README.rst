@@ -5,10 +5,6 @@ cookiecutter QA
 .. image:: https://travis-ci.org/davidemoro/cookiecutter-qa.svg?branch=master
        :target: https://travis-ci.org/davidemoro/cookiecutter-qa
 
-.. image:: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/shield.svg
-       :target: https://pyup.io/repos/github/davidemoro/cookiecutter-qa/
-       :alt: Updates
-
 .. image:: https://readthedocs.org/projects/cookiecutter-qa/badge/?version=latest
        :target: http://cookiecutter-qa.readthedocs.io
 
